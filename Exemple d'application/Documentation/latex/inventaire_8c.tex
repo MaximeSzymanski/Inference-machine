@@ -1,0 +1,187 @@
+\hypertarget{inventaire_8c}{}\doxysection{C\+:/\+Users/2maxi/\+Desktop/\+Exemple d\textquotesingle{}application/\+Documents sources/exemple\+\_\+dapplication/inventaire.c File Reference}
+\label{inventaire_8c}\index{C:/Users/2maxi/Desktop/Exemple d\textquotesingle{}application/Documents sources/exemple\_dapplication/inventaire.c@{C:/Users/2maxi/Desktop/Exemple d\textquotesingle{}application/Documents sources/exemple\_dapplication/inventaire.c}}
+
+
+Fichier source des fonctions relative a l\textquotesingle{}inventaire du joueur.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}all.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}} \mbox{\hyperlink{inventaire_8c_a208a09c94f61a66f8c0f827a4e571dc0}{ajout\+\_\+inv}} (\mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}} inv, int quantite, char $\ast$nom)
+\begin{DoxyCompactList}\small\item\em Ajoute une quantite d\textquotesingle{}un item a l\textquotesingle{}inventaire du joueur. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}} \mbox{\hyperlink{inventaire_8c_a1848a4b25523462b8a578e0e93afcbae}{supp\+\_\+item\+\_\+inv}} (\mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}} inv, char $\ast$nom, int quantite)
+\begin{DoxyCompactList}\small\item\em Supprime une quantite d\textquotesingle{}un item a l\textquotesingle{}inventaire du joueur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{inventaire_8c_acb0cb2806a67286d520fbbaff81575f9}{afficher\+\_\+inv}} (\mbox{\hyperlink{struct_joueur}{Joueur}} j)
+\begin{DoxyCompactList}\small\item\em Affiche l\textquotesingle{}inventaire du joueur. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}} \mbox{\hyperlink{inventaire_8c_a62307785e8763333dbd08830cce18481}{creer\+\_\+inv}} (void)
+\begin{DoxyCompactList}\small\item\em Creer un inventaire vide. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{inventaire_8c_a0528e8f954a09146dd5ae088a9a515d5}{est\+\_\+inv}} (\mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}} inv, char $\ast$nom)
+\begin{DoxyCompactList}\small\item\em Retourne \char`\"{}true\char`\"{} si le joueur possede l\textquotesingle{}item en parametre dans son inv, sinon \char`\"{}false\char`\"{}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{inventaire_8c_a24547eb6b7f8aff722f9d16f51019187}{quantite\+\_\+item}} (\mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}} inv, char $\ast$nom)
+\begin{DoxyCompactList}\small\item\em Retourne la quantite d\textquotesingle{}un item pris en parametre que le joueur possede dans son inv. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{inventaire_8c_aefd5f5fca0c977b6ccacd9cf86375d99}{detruire\+\_\+inv}} (\mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}} inv)
+\begin{DoxyCompactList}\small\item\em Detruit et libere la memoire allouee pour l\textquotesingle{}inventaire. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Fichier source des fonctions relative a l\textquotesingle{}inventaire du joueur. 
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+25/12/2020 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Maxime S\+Z\+Y\+M\+A\+N\+S\+KI Jules P\+E\+T\+RY
+\begin{DoxyEnumerate}
+\item Gestion de l\textquotesingle{}inventaire du joueur \+: L\textquotesingle{}inventaire est creer puis les elements sont ajoutes ou supprimes en fonction des actions du joueur dans le jeu. 
+\end{DoxyEnumerate}
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{inventaire_8c_acb0cb2806a67286d520fbbaff81575f9}\label{inventaire_8c_acb0cb2806a67286d520fbbaff81575f9}} 
+\index{inventaire.c@{inventaire.c}!afficher\_inv@{afficher\_inv}}
+\index{afficher\_inv@{afficher\_inv}!inventaire.c@{inventaire.c}}
+\doxysubsubsection{\texorpdfstring{afficher\_inv()}{afficher\_inv()}}
+{\footnotesize\ttfamily void afficher\+\_\+inv (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_joueur}{Joueur}}}]{j }\end{DoxyParamCaption})}
+
+
+
+Affiche l\textquotesingle{}inventaire du joueur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & Structure du \mbox{\hyperlink{struct_joueur}{Joueur}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{inventaire_8c_a208a09c94f61a66f8c0f827a4e571dc0}\label{inventaire_8c_a208a09c94f61a66f8c0f827a4e571dc0}} 
+\index{inventaire.c@{inventaire.c}!ajout\_inv@{ajout\_inv}}
+\index{ajout\_inv@{ajout\_inv}!inventaire.c@{inventaire.c}}
+\doxysubsubsection{\texorpdfstring{ajout\_inv()}{ajout\_inv()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}} ajout\+\_\+inv (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}}}]{inv,  }\item[{int}]{quantite,  }\item[{char $\ast$}]{nom }\end{DoxyParamCaption})}
+
+
+
+Ajoute une quantite d\textquotesingle{}un item a l\textquotesingle{}inventaire du joueur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inv} & Inventaire du \mbox{\hyperlink{struct_joueur}{Joueur}}. \\
+\hline
+{\em quantite} & Quantite d\textquotesingle{}item a ajoute. \\
+\hline
+{\em nom} & Nom de l\textquotesingle{}item a ajoute. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inv Inventaire du joueur mise a jour avec l\textquotesingle{}item ajoute. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{inventaire_8c_a62307785e8763333dbd08830cce18481}\label{inventaire_8c_a62307785e8763333dbd08830cce18481}} 
+\index{inventaire.c@{inventaire.c}!creer\_inv@{creer\_inv}}
+\index{creer\_inv@{creer\_inv}!inventaire.c@{inventaire.c}}
+\doxysubsubsection{\texorpdfstring{creer\_inv()}{creer\_inv()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}} creer\+\_\+inv (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Creer un inventaire vide. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inv Inventaire du joueur vide. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{inventaire_8c_aefd5f5fca0c977b6ccacd9cf86375d99}\label{inventaire_8c_aefd5f5fca0c977b6ccacd9cf86375d99}} 
+\index{inventaire.c@{inventaire.c}!detruire\_inv@{detruire\_inv}}
+\index{detruire\_inv@{detruire\_inv}!inventaire.c@{inventaire.c}}
+\doxysubsubsection{\texorpdfstring{detruire\_inv()}{detruire\_inv()}}
+{\footnotesize\ttfamily void detruire\+\_\+inv (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}}}]{inv }\end{DoxyParamCaption})}
+
+
+
+Detruit et libere la memoire allouee pour l\textquotesingle{}inventaire. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inv} & Inventaire du \mbox{\hyperlink{struct_joueur}{Joueur}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{inventaire_8c_a0528e8f954a09146dd5ae088a9a515d5}\label{inventaire_8c_a0528e8f954a09146dd5ae088a9a515d5}} 
+\index{inventaire.c@{inventaire.c}!est\_inv@{est\_inv}}
+\index{est\_inv@{est\_inv}!inventaire.c@{inventaire.c}}
+\doxysubsubsection{\texorpdfstring{est\_inv()}{est\_inv()}}
+{\footnotesize\ttfamily bool est\+\_\+inv (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}}}]{inv,  }\item[{char $\ast$}]{nom }\end{DoxyParamCaption})}
+
+
+
+Retourne \char`\"{}true\char`\"{} si le joueur possede l\textquotesingle{}item en parametre dans son inv, sinon \char`\"{}false\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inv} & Inventaire du \mbox{\hyperlink{struct_joueur}{Joueur}}. \\
+\hline
+{\em nom} & Nom de l\textquotesingle{}item qu\textquotesingle{}on recherche dans l\textquotesingle{}inventaire. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True ou False selon les conditions. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{inventaire_8c_a24547eb6b7f8aff722f9d16f51019187}\label{inventaire_8c_a24547eb6b7f8aff722f9d16f51019187}} 
+\index{inventaire.c@{inventaire.c}!quantite\_item@{quantite\_item}}
+\index{quantite\_item@{quantite\_item}!inventaire.c@{inventaire.c}}
+\doxysubsubsection{\texorpdfstring{quantite\_item()}{quantite\_item()}}
+{\footnotesize\ttfamily int quantite\+\_\+item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}}}]{inv,  }\item[{char $\ast$}]{nom }\end{DoxyParamCaption})}
+
+
+
+Retourne la quantite d\textquotesingle{}un item pris en parametre que le joueur possede dans son inv. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inv} & Inventaire du \mbox{\hyperlink{struct_joueur}{Joueur}}. \\
+\hline
+{\em nom} & Nom de l\textquotesingle{}item qu\textquotesingle{}on recherche dans l\textquotesingle{}inventaire. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+temp-\/$>$quantite Quantite de l\textquotesingle{}item recherche. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{inventaire_8c_a1848a4b25523462b8a578e0e93afcbae}\label{inventaire_8c_a1848a4b25523462b8a578e0e93afcbae}} 
+\index{inventaire.c@{inventaire.c}!supp\_item\_inv@{supp\_item\_inv}}
+\index{supp\_item\_inv@{supp\_item\_inv}!inventaire.c@{inventaire.c}}
+\doxysubsubsection{\texorpdfstring{supp\_item\_inv()}{supp\_item\_inv()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}} supp\+\_\+item\+\_\+inv (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}}}]{inv,  }\item[{char $\ast$}]{nom,  }\item[{int}]{quantite }\end{DoxyParamCaption})}
+
+
+
+Supprime une quantite d\textquotesingle{}un item a l\textquotesingle{}inventaire du joueur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inv} & Inventaire du \mbox{\hyperlink{struct_joueur}{Joueur}}. \\
+\hline
+{\em nom} & Nom de l\textquotesingle{}item a ajoute. \\
+\hline
+{\em quantite} & Quantite d\textquotesingle{}item a ajoute. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inv Inventaire du joueur mise a jour avec l\textquotesingle{}item ajoute. 
+\end{DoxyReturn}

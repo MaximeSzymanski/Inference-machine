@@ -1,0 +1,795 @@
+\hypertarget{all_8h}{}\doxysection{C\+:/\+Users/2maxi/\+Desktop/\+Exemple d\textquotesingle{}application/\+Documents sources/exemple\+\_\+dapplication/all.h File Reference}
+\label{all_8h}\index{C:/Users/2maxi/Desktop/Exemple d\textquotesingle{}application/Documents sources/exemple\_dapplication/all.h@{C:/Users/2maxi/Desktop/Exemple d\textquotesingle{}application/Documents sources/exemple\_dapplication/all.h}}
+
+
+Contient les en-\/têtes des fonctions relatives a la gestion de l\textquotesingle{}inventaire, des interfaces, de l\textquotesingle{}arbre et du joueur.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}craft.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structmonstre}{monstre}}
+\begin{DoxyCompactList}\small\item\em Contient les informations d\textquotesingle{}un monstre Cette structure contient les informations d\textquotesingle{}un monstre (vie , type). ~\newline
+ Cette structure nous facilite la gestion des monstres. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structlieu}{lieu}}
+\begin{DoxyCompactList}\small\item\em Contient les informations d\textquotesingle{}un lieu Cette structure contient les informations d\textquotesingle{}un lieu (nom , unique\+\_\+id, est\+\_\+monstre, monstre). ~\newline
+ Cette structure nous facilite la gestion des lieux. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtree__elem}{tree\+\_\+elem}}
+\begin{DoxyCompactList}\small\item\em Contient les informations d\textquotesingle{}un noeud de l\textquotesingle{}arbre. Cette structure contient les informations d\textquotesingle{}un monstre (lieu, $\ast$right, $\ast$left, $\ast$parent). ~\newline
+ Cette structure nous facilite la gestion de l\textquotesingle{}arbre. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structelem}{elem}}
+\item 
+struct \mbox{\hyperlink{structdesc}{desc}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{all_8h_a2ae9f7ac1c38e48289509e25e8666356}\label{all_8h_a2ae9f7ac1c38e48289509e25e8666356}} 
+typedef struct \mbox{\hyperlink{structmonstre}{monstre}} {\bfseries monstre}
+\item 
+\mbox{\Hypertarget{all_8h_a0251e48c3331d48961efe0d9d86111fe}\label{all_8h_a0251e48c3331d48961efe0d9d86111fe}} 
+typedef struct \mbox{\hyperlink{structlieu}{lieu}} {\bfseries lieu}
+\item 
+\mbox{\Hypertarget{all_8h_ac5c67e76e8be8ff566e58336fb39dce2}\label{all_8h_ac5c67e76e8be8ff566e58336fb39dce2}} 
+typedef struct \mbox{\hyperlink{structtree__elem}{tree\+\_\+elem}} {\bfseries tree\+\_\+elem}
+\item 
+\mbox{\Hypertarget{all_8h_aba5ef21c653e1dd22083d2708b77171f}\label{all_8h_aba5ef21c653e1dd22083d2708b77171f}} 
+typedef \mbox{\hyperlink{structtree__elem}{tree\+\_\+elem}} $\ast$ {\bfseries B\+Tree}
+\item 
+\mbox{\Hypertarget{all_8h_a03f28ef452dbb87c629a2b39da6fc63c}\label{all_8h_a03f28ef452dbb87c629a2b39da6fc63c}} 
+typedef struct \mbox{\hyperlink{structelem}{elem}} {\bfseries elem}
+\item 
+\mbox{\Hypertarget{all_8h_a5d4952f664827b50a3ea7ea61f054564}\label{all_8h_a5d4952f664827b50a3ea7ea61f054564}} 
+typedef \mbox{\hyperlink{structelem}{elem}} $\ast$ {\bfseries Liste\+\_\+inv}
+\item 
+\mbox{\Hypertarget{all_8h_a5e9d142531a3fd099b68f5573c9c9404}\label{all_8h_a5e9d142531a3fd099b68f5573c9c9404}} 
+typedef struct \mbox{\hyperlink{structdesc}{desc}} {\bfseries desc}
+\item 
+\mbox{\Hypertarget{all_8h_ad50117965b617c6e6b1439dfe6ce3afb}\label{all_8h_ad50117965b617c6e6b1439dfe6ce3afb}} 
+typedef \mbox{\hyperlink{structdesc}{desc}} $\ast$ {\bfseries Joueur}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_joueur}{Joueur}} \mbox{\hyperlink{all_8h_a47286ef416232e0e92a594444ed478b8}{creer\+\_\+joueur}} (void)
+\begin{DoxyCompactList}\small\item\em Fonction qui creer et initialise la structure \mbox{\hyperlink{struct_joueur}{Joueur}} (inventaire, position, bdc, vie etc). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_joueur}{Joueur}} \mbox{\hyperlink{all_8h_a7757e463c856626529cbc349853158bb}{gestion\+\_\+commande\+\_\+arg1}} (\mbox{\hyperlink{struct_joueur}{Joueur}} j, \mbox{\hyperlink{structtree__elem}{B\+Tree}} t, \mbox{\hyperlink{struct_base__fait}{liste\+\_\+fait}} deduction)
+\begin{DoxyCompactList}\small\item\em Fonction qui appelle la fonction correspondante a la commande execute. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{all_8h_ae678694b7a56b7387592d51b8961f9f2}{saisie\+\_\+joueur}} (void)
+\begin{DoxyCompactList}\small\item\em Fonction qui recupere la commande execute par le joueur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{all_8h_a6919dd24e02a0967e6566f0363611004}{detruire\+\_\+joueur}} (\mbox{\hyperlink{struct_joueur}{Joueur}} j)
+\begin{DoxyCompactList}\small\item\em Fonction qui libere la memoire utilise pour la structure joueur. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_joueur}{Joueur}} \mbox{\hyperlink{all_8h_a18dfb52402d63925a37a3614435e123e}{commande\+\_\+aller}} (char $\ast$arg2, \mbox{\hyperlink{struct_joueur}{Joueur}} j, \mbox{\hyperlink{structtree__elem}{B\+Tree}} t)
+\begin{DoxyCompactList}\small\item\em Fonction qui deplace le joueur vers le lieu voulu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{all_8h_acd643695fade7cd0136e7b958260255a}{commande\+\_\+regarder}} (\mbox{\hyperlink{struct_joueur}{Joueur}} j)
+\begin{DoxyCompactList}\small\item\em Fonction qui lit le fichier correspondant au lieu ou le joueur se situe. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtree__elem}{B\+Tree}} \mbox{\hyperlink{all_8h_a901bcb6c7932764c5863c0fbf7d2700f}{parcourir\+\_\+arbre}} (\mbox{\hyperlink{struct_joueur}{Joueur}} j, \mbox{\hyperlink{structtree__elem}{B\+Tree}} t)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de parcourir l\textquotesingle{}arbre (la map) jusqu\textquotesingle{}au lieu ou se situe le joueur. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{all_8h_a876f1b2d386fdedd6293f8bd2d4ffff1}{nombre\+\_\+en\+\_\+lieu}} (int nombre)
+\begin{DoxyCompactList}\small\item\em Fonction qui retourne le lieu en char$\ast$ a partir de son integer correspondant. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{all_8h_a0c8566645c2fddc0cf6ddf6837a53a6a}{lieu\+\_\+en\+\_\+nombre}} (char $\ast$\mbox{\hyperlink{structlieu}{lieu}})
+\begin{DoxyCompactList}\small\item\em Fonction qui retourne le lieu en integer a partir de son char$\ast$ correspondant. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{all_8h_aa9daa657bb9a95a233cb1cf50d77fe2a}{nombre\+\_\+en\+\_\+direction}} (int nombre)
+\begin{DoxyCompactList}\small\item\em Fonction qui retourne une direction en char$\ast$ a partir de son integer correspondant. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{all_8h_a8eee94de63d939b2cc68cf61c4906001}{direction\+\_\+en\+\_\+nombre}} (char $\ast$\mbox{\hyperlink{structlieu}{lieu}})
+\begin{DoxyCompactList}\small\item\em Fonction qui retourne une direction en integer a partir de son char$\ast$ correspondant. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_joueur}{Joueur}} \mbox{\hyperlink{all_8h_abf86ed7235bd3ad66c6706344a424e96}{couper\+\_\+bois}} (\mbox{\hyperlink{struct_joueur}{Joueur}} j)
+\begin{DoxyCompactList}\small\item\em Fonction qui ajoute des buches dans l\textquotesingle{}inventaire du joueur quand il fait la commande \char`\"{}couper\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_joueur}{Joueur}} \mbox{\hyperlink{all_8h_ad40ef8b8df829c6f0f205df7a7a7a88f}{miner\+\_\+fer}} (\mbox{\hyperlink{struct_joueur}{Joueur}} j)
+\begin{DoxyCompactList}\small\item\em Fonction qui ajoute du fer dans l\textquotesingle{}inventaire du joueur quand il fait la commande \char`\"{}miner\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_joueur}{Joueur}} \mbox{\hyperlink{all_8h_a163e1221a3a840252782f48804ffc191}{attaquer\+\_\+joueur}} (\mbox{\hyperlink{struct_joueur}{Joueur}} j, \mbox{\hyperlink{structtree__elem}{B\+Tree}} t)
+\begin{DoxyCompactList}\small\item\em Fonction qui enleve des points de vie au joueur. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_joueur}{Joueur}} \mbox{\hyperlink{all_8h_aac55872603eee54e55c975e96551f253}{commande\+\_\+manger}} (\mbox{\hyperlink{struct_joueur}{Joueur}} j)
+\begin{DoxyCompactList}\small\item\em Fonction qui ajoute des points de vie au joueur quand il mange une pomme. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}} \mbox{\hyperlink{all_8h_a62307785e8763333dbd08830cce18481}{creer\+\_\+inv}} (void)
+\begin{DoxyCompactList}\small\item\em Creer un inventaire vide. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}} \mbox{\hyperlink{all_8h_a208a09c94f61a66f8c0f827a4e571dc0}{ajout\+\_\+inv}} (\mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}} inv, int quantite, char $\ast$nom)
+\begin{DoxyCompactList}\small\item\em Ajoute une quantite d\textquotesingle{}un item a l\textquotesingle{}inventaire du joueur. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}} \mbox{\hyperlink{all_8h_a1848a4b25523462b8a578e0e93afcbae}{supp\+\_\+item\+\_\+inv}} (\mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}} inv, char $\ast$nom, int quantite)
+\begin{DoxyCompactList}\small\item\em Supprime une quantite d\textquotesingle{}un item a l\textquotesingle{}inventaire du joueur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{all_8h_acb0cb2806a67286d520fbbaff81575f9}{afficher\+\_\+inv}} (\mbox{\hyperlink{struct_joueur}{Joueur}} j)
+\begin{DoxyCompactList}\small\item\em Affiche l\textquotesingle{}inventaire du joueur. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{all_8h_a0528e8f954a09146dd5ae088a9a515d5}{est\+\_\+inv}} (\mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}} inv, char $\ast$nom)
+\begin{DoxyCompactList}\small\item\em Retourne \char`\"{}true\char`\"{} si le joueur possede l\textquotesingle{}item en parametre dans son inv, sinon \char`\"{}false\char`\"{}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{all_8h_a24547eb6b7f8aff722f9d16f51019187}{quantite\+\_\+item}} (\mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}} inv, char $\ast$nom)
+\begin{DoxyCompactList}\small\item\em Retourne la quantite d\textquotesingle{}un item pris en parametre que le joueur possede dans son inv. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{all_8h_aefd5f5fca0c977b6ccacd9cf86375d99}{detruire\+\_\+inv}} (\mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}} inv)
+\begin{DoxyCompactList}\small\item\em Detruit et libere la memoire allouee pour l\textquotesingle{}inventaire. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtree__elem}{B\+Tree}} \mbox{\hyperlink{all_8h_a97aa41059778fdc1c152621297968c01}{creer\+\_\+arbre}} (int nom)
+\begin{DoxyCompactList}\small\item\em Fonction qui creer et initialise un element d\textquotesingle{}arbre. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{all_8h_a6e597e96a2963f7a5e081eb8c881207e}{detruire\+\_\+arbre}} (\mbox{\hyperlink{structtree__elem}{B\+Tree}} t)
+\begin{DoxyCompactList}\small\item\em Fonction qui libere la memoire allouer a la constitution d\textquotesingle{}un arbre. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtree__elem}{B\+Tree}} \mbox{\hyperlink{all_8h_adc1976a697d93746f35b2dcd641edd7c}{enraciner}} (\mbox{\hyperlink{structtree__elem}{B\+Tree}} l, \mbox{\hyperlink{structtree__elem}{B\+Tree}} r, \mbox{\hyperlink{structtree__elem}{B\+Tree}} t)
+\begin{DoxyCompactList}\small\item\em Fonction qui enracine deux feuilles a un noeud. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{all_8h_a88e2d0cb892bf5c7bc1815711a527793}{afficher\+\_\+arbre\+\_\+prefix}} (\mbox{\hyperlink{structtree__elem}{B\+Tree}} t)
+\begin{DoxyCompactList}\small\item\em Fonction qui affiche l\textquotesingle{}arbre de gauche a droite. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{all_8h_a5b8451422e3cb83fef57c5c61b3f12df}{nombre\+\_\+noeuds}} (\mbox{\hyperlink{structtree__elem}{B\+Tree}} t)
+\begin{DoxyCompactList}\small\item\em Fonction qui affiche le nombre de noeud de l\textquotesingle{}arbre (feuilles et racine comprises) (fonction recursive). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtree__elem}{B\+Tree}} \mbox{\hyperlink{all_8h_a00ce26b375776a38c627b722fd96f016}{extansion}} (\mbox{\hyperlink{struct_joueur}{Joueur}} j, \mbox{\hyperlink{structtree__elem}{B\+Tree}} t)
+\begin{DoxyCompactList}\small\item\em Fonction qui creer et ajoute une feuille droite et gauche a l\textquotesingle{}element ou le joueur est aller. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtree__elem}{B\+Tree}} \mbox{\hyperlink{all_8h_ac290d22461fb4785f572c74d4a931af9}{attaquer\+\_\+monstre}} (\mbox{\hyperlink{struct_joueur}{Joueur}} j, \mbox{\hyperlink{structtree__elem}{B\+Tree}} t)
+\begin{DoxyCompactList}\small\item\em Fonction qui enleve de la vie au monstre dans un donjon avec la commande \char`\"{}attaquer\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_joueur}{Joueur}} \mbox{\hyperlink{all_8h_af553691cdc64f967f5801d11db452fac}{craft}} (\mbox{\hyperlink{struct_joueur}{Joueur}} j, char $\ast$nom\+\_\+item, \mbox{\hyperlink{struct_base__fait}{liste\+\_\+fait}} deduction)
+\begin{DoxyCompactList}\small\item\em Fonction qui craft l\textquotesingle{}objet entré en parametre et l\textquotesingle{}ajoute dans la base de fait et dans l\textquotesingle{}inventaire du joueur. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_joueur}{Joueur}} \mbox{\hyperlink{all_8h_a904a60f95374846f190b50c2eb65516e}{Suppression\+\_\+item}} (\mbox{\hyperlink{struct_joueur}{Joueur}} j, char $\ast$nom\+\_\+item)
+\begin{DoxyCompactList}\small\item\em Fonction qui supprime un objet de la base de fait. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_joueur}{Joueur}} \mbox{\hyperlink{all_8h_a8272ac74be5fde8732e798b1ce566e81}{supprimer\+\_\+craft}} (\mbox{\hyperlink{struct_joueur}{Joueur}} j, char $\ast$nom\+\_\+item)
+\begin{DoxyCompactList}\small\item\em Fonction qui supprime les objets utilisé pour le craft de l\textquotesingle{}objet en parametre. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{all_8h_ac53606292296697d79cfca1812b629db}{menu\+\_\+accueil}} (void)
+\begin{DoxyCompactList}\small\item\em Fonction qui affiche le premier menu d\textquotesingle{}accueil. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{all_8h_a6a7a8998d1b5f1aa9c3cab0a95341f05}{menu\+\_\+perdu}} (\mbox{\hyperlink{struct_joueur}{Joueur}} j, \mbox{\hyperlink{structtree__elem}{B\+Tree}} t)
+\begin{DoxyCompactList}\small\item\em Fonction qui affiche le premier menu d\textquotesingle{}accueil. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contient les en-\/têtes des fonctions relatives a la gestion de l\textquotesingle{}inventaire, des interfaces, de l\textquotesingle{}arbre et du joueur. 
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+25/12/2020 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Maxime S\+Z\+Y\+M\+A\+N\+S\+KI Jules P\+E\+T\+RY 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{all_8h_a88e2d0cb892bf5c7bc1815711a527793}\label{all_8h_a88e2d0cb892bf5c7bc1815711a527793}} 
+\index{all.h@{all.h}!afficher\_arbre\_prefix@{afficher\_arbre\_prefix}}
+\index{afficher\_arbre\_prefix@{afficher\_arbre\_prefix}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{afficher\_arbre\_prefix()}{afficher\_arbre\_prefix()}}
+{\footnotesize\ttfamily void afficher\+\_\+arbre\+\_\+prefix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtree__elem}{B\+Tree}}}]{t }\end{DoxyParamCaption})}
+
+
+
+Fonction qui affiche l\textquotesingle{}arbre de gauche a droite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & L\textquotesingle{}arbre a afficher. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_acb0cb2806a67286d520fbbaff81575f9}\label{all_8h_acb0cb2806a67286d520fbbaff81575f9}} 
+\index{all.h@{all.h}!afficher\_inv@{afficher\_inv}}
+\index{afficher\_inv@{afficher\_inv}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{afficher\_inv()}{afficher\_inv()}}
+{\footnotesize\ttfamily void afficher\+\_\+inv (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_joueur}{Joueur}}}]{j }\end{DoxyParamCaption})}
+
+
+
+Affiche l\textquotesingle{}inventaire du joueur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & Structure du \mbox{\hyperlink{struct_joueur}{Joueur}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_a208a09c94f61a66f8c0f827a4e571dc0}\label{all_8h_a208a09c94f61a66f8c0f827a4e571dc0}} 
+\index{all.h@{all.h}!ajout\_inv@{ajout\_inv}}
+\index{ajout\_inv@{ajout\_inv}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{ajout\_inv()}{ajout\_inv()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}} ajout\+\_\+inv (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}}}]{inv,  }\item[{int}]{quantite,  }\item[{char $\ast$}]{nom }\end{DoxyParamCaption})}
+
+
+
+Ajoute une quantite d\textquotesingle{}un item a l\textquotesingle{}inventaire du joueur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inv} & Inventaire du \mbox{\hyperlink{struct_joueur}{Joueur}}. \\
+\hline
+{\em quantite} & Quantite d\textquotesingle{}item a ajoute. \\
+\hline
+{\em nom} & Nom de l\textquotesingle{}item a ajoute. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inv Inventaire du joueur mise a jour avec l\textquotesingle{}item ajoute. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_a163e1221a3a840252782f48804ffc191}\label{all_8h_a163e1221a3a840252782f48804ffc191}} 
+\index{all.h@{all.h}!attaquer\_joueur@{attaquer\_joueur}}
+\index{attaquer\_joueur@{attaquer\_joueur}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{attaquer\_joueur()}{attaquer\_joueur()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_joueur}{Joueur}} attaquer\+\_\+joueur (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_joueur}{Joueur}}}]{j,  }\item[{\mbox{\hyperlink{structtree__elem}{B\+Tree}}}]{t }\end{DoxyParamCaption})}
+
+
+
+Fonction qui enleve des points de vie au joueur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & Structure du \mbox{\hyperlink{struct_joueur}{Joueur}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+j Structure du \mbox{\hyperlink{struct_joueur}{Joueur}} mise a jour avec des pts de vie en moins. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_ac290d22461fb4785f572c74d4a931af9}\label{all_8h_ac290d22461fb4785f572c74d4a931af9}} 
+\index{all.h@{all.h}!attaquer\_monstre@{attaquer\_monstre}}
+\index{attaquer\_monstre@{attaquer\_monstre}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{attaquer\_monstre()}{attaquer\_monstre()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtree__elem}{B\+Tree}} attaquer\+\_\+monstre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_joueur}{Joueur}}}]{j,  }\item[{\mbox{\hyperlink{structtree__elem}{B\+Tree}}}]{t }\end{DoxyParamCaption})}
+
+
+
+Fonction qui enleve de la vie au monstre dans un donjon avec la commande \char`\"{}attaquer\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & Structure du \mbox{\hyperlink{struct_joueur}{Joueur}}. \\
+\hline
+{\em t} & L\textquotesingle{}arbre correspondant a la map. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+t L\textquotesingle{}arbre dont la structure du monstre du donjon ou le joueur se trouve, est actualisee. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_a18dfb52402d63925a37a3614435e123e}\label{all_8h_a18dfb52402d63925a37a3614435e123e}} 
+\index{all.h@{all.h}!commande\_aller@{commande\_aller}}
+\index{commande\_aller@{commande\_aller}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{commande\_aller()}{commande\_aller()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_joueur}{Joueur}} commande\+\_\+aller (\begin{DoxyParamCaption}\item[{char $\ast$}]{arg2,  }\item[{\mbox{\hyperlink{struct_joueur}{Joueur}}}]{j,  }\item[{\mbox{\hyperlink{structtree__elem}{B\+Tree}}}]{t }\end{DoxyParamCaption})}
+
+
+
+Fonction qui deplace le joueur vers le lieu voulu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg2} & Deuxieme argument de la commande executer par le joueur. \\
+\hline
+{\em j} & Structure du \mbox{\hyperlink{struct_joueur}{Joueur}}. \\
+\hline
+{\em t} & Arbre qui correspond a la map \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+j Structure du \mbox{\hyperlink{struct_joueur}{Joueur}} avec le lieu du joueur mis a jour. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_aac55872603eee54e55c975e96551f253}\label{all_8h_aac55872603eee54e55c975e96551f253}} 
+\index{all.h@{all.h}!commande\_manger@{commande\_manger}}
+\index{commande\_manger@{commande\_manger}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{commande\_manger()}{commande\_manger()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_joueur}{Joueur}} commande\+\_\+manger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_joueur}{Joueur}}}]{j }\end{DoxyParamCaption})}
+
+
+
+Fonction qui ajoute des points de vie au joueur quand il mange une pomme. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & Structure du \mbox{\hyperlink{struct_joueur}{Joueur}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+j Structure du \mbox{\hyperlink{struct_joueur}{Joueur}} mise a jour avec potentiellement des pts de vie en plus. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_acd643695fade7cd0136e7b958260255a}\label{all_8h_acd643695fade7cd0136e7b958260255a}} 
+\index{all.h@{all.h}!commande\_regarder@{commande\_regarder}}
+\index{commande\_regarder@{commande\_regarder}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{commande\_regarder()}{commande\_regarder()}}
+{\footnotesize\ttfamily void commande\+\_\+regarder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_joueur}{Joueur}}}]{j }\end{DoxyParamCaption})}
+
+
+
+Fonction qui lit le fichier correspondant au lieu ou le joueur se situe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & Structure du \mbox{\hyperlink{struct_joueur}{Joueur}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_abf86ed7235bd3ad66c6706344a424e96}\label{all_8h_abf86ed7235bd3ad66c6706344a424e96}} 
+\index{all.h@{all.h}!couper\_bois@{couper\_bois}}
+\index{couper\_bois@{couper\_bois}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{couper\_bois()}{couper\_bois()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_joueur}{Joueur}} couper\+\_\+bois (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_joueur}{Joueur}}}]{j }\end{DoxyParamCaption})}
+
+
+
+Fonction qui ajoute des buches dans l\textquotesingle{}inventaire du joueur quand il fait la commande \char`\"{}couper\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & Structure du \mbox{\hyperlink{struct_joueur}{Joueur}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+j Structure du \mbox{\hyperlink{struct_joueur}{Joueur}} mise a jour avec potentiellement du bois et une pomme. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_af553691cdc64f967f5801d11db452fac}\label{all_8h_af553691cdc64f967f5801d11db452fac}} 
+\index{all.h@{all.h}!craft@{craft}}
+\index{craft@{craft}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{craft()}{craft()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_joueur}{Joueur}} craft (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_joueur}{Joueur}}}]{j,  }\item[{char $\ast$}]{nom\+\_\+item,  }\item[{\mbox{\hyperlink{struct_base__fait}{liste\+\_\+fait}}}]{deduction }\end{DoxyParamCaption})}
+
+
+
+Fonction qui craft l\textquotesingle{}objet entré en parametre et l\textquotesingle{}ajoute dans la base de fait et dans l\textquotesingle{}inventaire du joueur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & Structure du joueur. \\
+\hline
+{\em nom\+\_\+item} & Nom de l\textquotesingle{}objet a crafter. \\
+\hline
+{\em deduction} & Craft possible a faire. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_joueur}{Joueur}} Retourne les informations du joueur apres le craft. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_a97aa41059778fdc1c152621297968c01}\label{all_8h_a97aa41059778fdc1c152621297968c01}} 
+\index{all.h@{all.h}!creer\_arbre@{creer\_arbre}}
+\index{creer\_arbre@{creer\_arbre}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{creer\_arbre()}{creer\_arbre()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtree__elem}{B\+Tree}} creer\+\_\+arbre (\begin{DoxyParamCaption}\item[{int}]{nom }\end{DoxyParamCaption})}
+
+
+
+Fonction qui creer et initialise un element d\textquotesingle{}arbre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom} & Nom du lieu que sera l\textquotesingle{}element de l\textquotesingle{}arbre. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+t Element d\textquotesingle{}arbre qui vient d\textquotesingle{}etre creer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_a62307785e8763333dbd08830cce18481}\label{all_8h_a62307785e8763333dbd08830cce18481}} 
+\index{all.h@{all.h}!creer\_inv@{creer\_inv}}
+\index{creer\_inv@{creer\_inv}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{creer\_inv()}{creer\_inv()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}} creer\+\_\+inv (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Creer un inventaire vide. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inv Inventaire du joueur vide. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_a47286ef416232e0e92a594444ed478b8}\label{all_8h_a47286ef416232e0e92a594444ed478b8}} 
+\index{all.h@{all.h}!creer\_joueur@{creer\_joueur}}
+\index{creer\_joueur@{creer\_joueur}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{creer\_joueur()}{creer\_joueur()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_joueur}{Joueur}} creer\+\_\+joueur (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui creer et initialise la structure \mbox{\hyperlink{struct_joueur}{Joueur}} (inventaire, position, bdc, vie etc). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+j retourne les informations du joueur. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_a6e597e96a2963f7a5e081eb8c881207e}\label{all_8h_a6e597e96a2963f7a5e081eb8c881207e}} 
+\index{all.h@{all.h}!detruire\_arbre@{detruire\_arbre}}
+\index{detruire\_arbre@{detruire\_arbre}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{detruire\_arbre()}{detruire\_arbre()}}
+{\footnotesize\ttfamily void detruire\+\_\+arbre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtree__elem}{B\+Tree}}}]{t }\end{DoxyParamCaption})}
+
+
+
+Fonction qui libere la memoire allouer a la constitution d\textquotesingle{}un arbre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & L\textquotesingle{}arbre a detruire. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_aefd5f5fca0c977b6ccacd9cf86375d99}\label{all_8h_aefd5f5fca0c977b6ccacd9cf86375d99}} 
+\index{all.h@{all.h}!detruire\_inv@{detruire\_inv}}
+\index{detruire\_inv@{detruire\_inv}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{detruire\_inv()}{detruire\_inv()}}
+{\footnotesize\ttfamily void detruire\+\_\+inv (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}}}]{inv }\end{DoxyParamCaption})}
+
+
+
+Detruit et libere la memoire allouee pour l\textquotesingle{}inventaire. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inv} & Inventaire du \mbox{\hyperlink{struct_joueur}{Joueur}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_a6919dd24e02a0967e6566f0363611004}\label{all_8h_a6919dd24e02a0967e6566f0363611004}} 
+\index{all.h@{all.h}!detruire\_joueur@{detruire\_joueur}}
+\index{detruire\_joueur@{detruire\_joueur}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{detruire\_joueur()}{detruire\_joueur()}}
+{\footnotesize\ttfamily void detruire\+\_\+joueur (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_joueur}{Joueur}}}]{j }\end{DoxyParamCaption})}
+
+
+
+Fonction qui libere la memoire utilise pour la structure joueur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & Structure du \mbox{\hyperlink{struct_joueur}{Joueur}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_a8eee94de63d939b2cc68cf61c4906001}\label{all_8h_a8eee94de63d939b2cc68cf61c4906001}} 
+\index{all.h@{all.h}!direction\_en\_nombre@{direction\_en\_nombre}}
+\index{direction\_en\_nombre@{direction\_en\_nombre}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{direction\_en\_nombre()}{direction\_en\_nombre()}}
+{\footnotesize\ttfamily int direction\+\_\+en\+\_\+nombre (\begin{DoxyParamCaption}\item[{char $\ast$}]{lieu }\end{DoxyParamCaption})}
+
+
+
+Fonction qui retourne une direction en integer a partir de son char$\ast$ correspondant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lieu} & nom d\textquotesingle{}une direction en toute lettre. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Nom de la direction prise en parametre en integer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_adc1976a697d93746f35b2dcd641edd7c}\label{all_8h_adc1976a697d93746f35b2dcd641edd7c}} 
+\index{all.h@{all.h}!enraciner@{enraciner}}
+\index{enraciner@{enraciner}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{enraciner()}{enraciner()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtree__elem}{B\+Tree}} enraciner (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtree__elem}{B\+Tree}}}]{l,  }\item[{\mbox{\hyperlink{structtree__elem}{B\+Tree}}}]{r,  }\item[{\mbox{\hyperlink{structtree__elem}{B\+Tree}}}]{t }\end{DoxyParamCaption})}
+
+
+
+Fonction qui enracine deux feuilles a un noeud. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & L\textquotesingle{}element d\textquotesingle{}arbre a enraciner en temps que fils gauche. \\
+\hline
+{\em r} & L\textquotesingle{}element d\textquotesingle{}arbre a enraciner en temps que fils droit. \\
+\hline
+{\em t} & L\textquotesingle{}element d\textquotesingle{}arbre sur lequel les feuilles vont s\textquotesingle{}enraciner. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+t L\textquotesingle{}arbre avec la racine et les deux fils. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_a0528e8f954a09146dd5ae088a9a515d5}\label{all_8h_a0528e8f954a09146dd5ae088a9a515d5}} 
+\index{all.h@{all.h}!est\_inv@{est\_inv}}
+\index{est\_inv@{est\_inv}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{est\_inv()}{est\_inv()}}
+{\footnotesize\ttfamily bool est\+\_\+inv (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}}}]{inv,  }\item[{char $\ast$}]{nom }\end{DoxyParamCaption})}
+
+
+
+Retourne \char`\"{}true\char`\"{} si le joueur possede l\textquotesingle{}item en parametre dans son inv, sinon \char`\"{}false\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inv} & Inventaire du \mbox{\hyperlink{struct_joueur}{Joueur}}. \\
+\hline
+{\em nom} & Nom de l\textquotesingle{}item qu\textquotesingle{}on recherche dans l\textquotesingle{}inventaire. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True ou False selon les conditions. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_a00ce26b375776a38c627b722fd96f016}\label{all_8h_a00ce26b375776a38c627b722fd96f016}} 
+\index{all.h@{all.h}!extansion@{extansion}}
+\index{extansion@{extansion}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{extansion()}{extansion()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtree__elem}{B\+Tree}} extansion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_joueur}{Joueur}}}]{j,  }\item[{\mbox{\hyperlink{structtree__elem}{B\+Tree}}}]{t }\end{DoxyParamCaption})}
+
+
+
+Fonction qui creer et ajoute une feuille droite et gauche a l\textquotesingle{}element ou le joueur est aller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & Structure du \mbox{\hyperlink{struct_joueur}{Joueur}}. \\
+\hline
+{\em t} & L\textquotesingle{}arbre qu\textquotesingle{}on veut etendre. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+t L\textquotesingle{}arbre potentiellement etendu. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_a7757e463c856626529cbc349853158bb}\label{all_8h_a7757e463c856626529cbc349853158bb}} 
+\index{all.h@{all.h}!gestion\_commande\_arg1@{gestion\_commande\_arg1}}
+\index{gestion\_commande\_arg1@{gestion\_commande\_arg1}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{gestion\_commande\_arg1()}{gestion\_commande\_arg1()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_joueur}{Joueur}} gestion\+\_\+commande\+\_\+arg1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_joueur}{Joueur}}}]{j,  }\item[{\mbox{\hyperlink{structtree__elem}{B\+Tree}}}]{t,  }\item[{\mbox{\hyperlink{struct_base__fait}{liste\+\_\+fait}}}]{deduction }\end{DoxyParamCaption})}
+
+
+
+Fonction qui appelle la fonction correspondante a la commande execute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & Structure du \mbox{\hyperlink{struct_joueur}{Joueur}}. \\
+\hline
+{\em t} & Arbre qui correspond a la map. \\
+\hline
+{\em deduction} & Craft possible a faire. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+j retourne les informations du joueur mise a jour en fonction de la commande execute. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_a0c8566645c2fddc0cf6ddf6837a53a6a}\label{all_8h_a0c8566645c2fddc0cf6ddf6837a53a6a}} 
+\index{all.h@{all.h}!lieu\_en\_nombre@{lieu\_en\_nombre}}
+\index{lieu\_en\_nombre@{lieu\_en\_nombre}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{lieu\_en\_nombre()}{lieu\_en\_nombre()}}
+{\footnotesize\ttfamily int lieu\+\_\+en\+\_\+nombre (\begin{DoxyParamCaption}\item[{char $\ast$}]{lieu }\end{DoxyParamCaption})}
+
+
+
+Fonction qui retourne le lieu en integer a partir de son char$\ast$ correspondant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lieu} & Nom d\textquotesingle{}un lieu en toute lettre. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Nom du lieu pris en parametre en integer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_ac53606292296697d79cfca1812b629db}\label{all_8h_ac53606292296697d79cfca1812b629db}} 
+\index{all.h@{all.h}!menu\_accueil@{menu\_accueil}}
+\index{menu\_accueil@{menu\_accueil}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{menu\_accueil()}{menu\_accueil()}}
+{\footnotesize\ttfamily int menu\+\_\+accueil (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui affiche le premier menu d\textquotesingle{}accueil. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+choice Retourne le choix du joueur. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_a6a7a8998d1b5f1aa9c3cab0a95341f05}\label{all_8h_a6a7a8998d1b5f1aa9c3cab0a95341f05}} 
+\index{all.h@{all.h}!menu\_perdu@{menu\_perdu}}
+\index{menu\_perdu@{menu\_perdu}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{menu\_perdu()}{menu\_perdu()}}
+{\footnotesize\ttfamily void menu\+\_\+perdu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_joueur}{Joueur}}}]{j,  }\item[{\mbox{\hyperlink{structtree__elem}{B\+Tree}}}]{t }\end{DoxyParamCaption})}
+
+
+
+Fonction qui affiche le premier menu d\textquotesingle{}accueil. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & Structure du \mbox{\hyperlink{struct_joueur}{Joueur}}. \\
+\hline
+{\em t} & Arbre correspondant a la map. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_ad40ef8b8df829c6f0f205df7a7a7a88f}\label{all_8h_ad40ef8b8df829c6f0f205df7a7a7a88f}} 
+\index{all.h@{all.h}!miner\_fer@{miner\_fer}}
+\index{miner\_fer@{miner\_fer}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{miner\_fer()}{miner\_fer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_joueur}{Joueur}} miner\+\_\+fer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_joueur}{Joueur}}}]{j }\end{DoxyParamCaption})}
+
+
+
+Fonction qui ajoute du fer dans l\textquotesingle{}inventaire du joueur quand il fait la commande \char`\"{}miner\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & Structure du \mbox{\hyperlink{struct_joueur}{Joueur}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+j Structure du \mbox{\hyperlink{struct_joueur}{Joueur}} mise a jour avec potentiellement du fer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_aa9daa657bb9a95a233cb1cf50d77fe2a}\label{all_8h_aa9daa657bb9a95a233cb1cf50d77fe2a}} 
+\index{all.h@{all.h}!nombre\_en\_direction@{nombre\_en\_direction}}
+\index{nombre\_en\_direction@{nombre\_en\_direction}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{nombre\_en\_direction()}{nombre\_en\_direction()}}
+{\footnotesize\ttfamily char $\ast$ nombre\+\_\+en\+\_\+direction (\begin{DoxyParamCaption}\item[{int}]{nombre }\end{DoxyParamCaption})}
+
+
+
+Fonction qui retourne une direction en char$\ast$ a partir de son integer correspondant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nombre} & Integer correspondant a une direction. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char$\ast$ Nom de la direction prise en parametre en toute lettre. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_a876f1b2d386fdedd6293f8bd2d4ffff1}\label{all_8h_a876f1b2d386fdedd6293f8bd2d4ffff1}} 
+\index{all.h@{all.h}!nombre\_en\_lieu@{nombre\_en\_lieu}}
+\index{nombre\_en\_lieu@{nombre\_en\_lieu}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{nombre\_en\_lieu()}{nombre\_en\_lieu()}}
+{\footnotesize\ttfamily char $\ast$ nombre\+\_\+en\+\_\+lieu (\begin{DoxyParamCaption}\item[{int}]{nombre }\end{DoxyParamCaption})}
+
+
+
+Fonction qui retourne le lieu en char$\ast$ a partir de son integer correspondant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nombre} & Integer correspondant a un lieu. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char$\ast$ Nom du lieu pris en parametre en toute lettre. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_a5b8451422e3cb83fef57c5c61b3f12df}\label{all_8h_a5b8451422e3cb83fef57c5c61b3f12df}} 
+\index{all.h@{all.h}!nombre\_noeuds@{nombre\_noeuds}}
+\index{nombre\_noeuds@{nombre\_noeuds}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{nombre\_noeuds()}{nombre\_noeuds()}}
+{\footnotesize\ttfamily int nombre\+\_\+noeuds (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtree__elem}{B\+Tree}}}]{t }\end{DoxyParamCaption})}
+
+
+
+Fonction qui affiche le nombre de noeud de l\textquotesingle{}arbre (feuilles et racine comprises) (fonction recursive). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & L\textquotesingle{}arbre dont on veut compter le nombre de noeuds. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Integer qui correspond a la somme des noeuds des fils gauche et des fils droits d\textquotesingle{}une racine. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_a901bcb6c7932764c5863c0fbf7d2700f}\label{all_8h_a901bcb6c7932764c5863c0fbf7d2700f}} 
+\index{all.h@{all.h}!parcourir\_arbre@{parcourir\_arbre}}
+\index{parcourir\_arbre@{parcourir\_arbre}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{parcourir\_arbre()}{parcourir\_arbre()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtree__elem}{B\+Tree}} parcourir\+\_\+arbre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_joueur}{Joueur}}}]{j,  }\item[{\mbox{\hyperlink{structtree__elem}{B\+Tree}}}]{t }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de parcourir l\textquotesingle{}arbre (la map) jusqu\textquotesingle{}au lieu ou se situe le joueur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & Structure du \mbox{\hyperlink{struct_joueur}{Joueur}}. \\
+\hline
+{\em t} & Arbre qui correspond a la map. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+t Element de l\textquotesingle{}arbre ou le joueur se situe 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_a24547eb6b7f8aff722f9d16f51019187}\label{all_8h_a24547eb6b7f8aff722f9d16f51019187}} 
+\index{all.h@{all.h}!quantite\_item@{quantite\_item}}
+\index{quantite\_item@{quantite\_item}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{quantite\_item()}{quantite\_item()}}
+{\footnotesize\ttfamily int quantite\+\_\+item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}}}]{inv,  }\item[{char $\ast$}]{nom }\end{DoxyParamCaption})}
+
+
+
+Retourne la quantite d\textquotesingle{}un item pris en parametre que le joueur possede dans son inv. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inv} & Inventaire du \mbox{\hyperlink{struct_joueur}{Joueur}}. \\
+\hline
+{\em nom} & Nom de l\textquotesingle{}item qu\textquotesingle{}on recherche dans l\textquotesingle{}inventaire. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+temp-\/$>$quantite Quantite de l\textquotesingle{}item recherche. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_ae678694b7a56b7387592d51b8961f9f2}\label{all_8h_ae678694b7a56b7387592d51b8961f9f2}} 
+\index{all.h@{all.h}!saisie\_joueur@{saisie\_joueur}}
+\index{saisie\_joueur@{saisie\_joueur}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{saisie\_joueur()}{saisie\_joueur()}}
+{\footnotesize\ttfamily int saisie\+\_\+joueur (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui recupere la commande execute par le joueur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+est\+\_\+quitte Donne l\textquotesingle{}information si le joueur a entrer la commande \char`\"{}quitter\char`\"{}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_a1848a4b25523462b8a578e0e93afcbae}\label{all_8h_a1848a4b25523462b8a578e0e93afcbae}} 
+\index{all.h@{all.h}!supp\_item\_inv@{supp\_item\_inv}}
+\index{supp\_item\_inv@{supp\_item\_inv}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{supp\_item\_inv()}{supp\_item\_inv()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}} supp\+\_\+item\+\_\+inv (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_liste__inv}{Liste\+\_\+inv}}}]{inv,  }\item[{char $\ast$}]{nom,  }\item[{int}]{quantite }\end{DoxyParamCaption})}
+
+
+
+Supprime une quantite d\textquotesingle{}un item a l\textquotesingle{}inventaire du joueur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inv} & Inventaire du \mbox{\hyperlink{struct_joueur}{Joueur}}. \\
+\hline
+{\em nom} & Nom de l\textquotesingle{}item a ajoute. \\
+\hline
+{\em quantite} & Quantite d\textquotesingle{}item a ajoute. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inv Inventaire du joueur mise a jour avec l\textquotesingle{}item ajoute. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_a904a60f95374846f190b50c2eb65516e}\label{all_8h_a904a60f95374846f190b50c2eb65516e}} 
+\index{all.h@{all.h}!Suppression\_item@{Suppression\_item}}
+\index{Suppression\_item@{Suppression\_item}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{Suppression\_item()}{Suppression\_item()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_joueur}{Joueur}} Suppression\+\_\+item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_joueur}{Joueur}}}]{j,  }\item[{char $\ast$}]{nom\+\_\+item }\end{DoxyParamCaption})}
+
+
+
+Fonction qui supprime un objet de la base de fait. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & Structure du joueur. \\
+\hline
+{\em nom\+\_\+item} & Nom de l\textquotesingle{}objet a supprimer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_joueur}{Joueur}} Retourne les informations du joueur apres la suppression . 
+\end{DoxyReturn}
+\mbox{\Hypertarget{all_8h_a8272ac74be5fde8732e798b1ce566e81}\label{all_8h_a8272ac74be5fde8732e798b1ce566e81}} 
+\index{all.h@{all.h}!supprimer\_craft@{supprimer\_craft}}
+\index{supprimer\_craft@{supprimer\_craft}!all.h@{all.h}}
+\doxysubsubsection{\texorpdfstring{supprimer\_craft()}{supprimer\_craft()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_joueur}{Joueur}} supprimer\+\_\+craft (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_joueur}{Joueur}}}]{j,  }\item[{char $\ast$}]{nom\+\_\+item }\end{DoxyParamCaption})}
+
+
+
+Fonction qui supprime les objets utilisé pour le craft de l\textquotesingle{}objet en parametre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & Structure du joueur. \\
+\hline
+{\em nom\+\_\+item} & Nom de l\textquotesingle{}objet dont on veut supprimer les ressources utilisé pour le créer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_joueur}{Joueur}} Retourne les informations du joueur apres la suppression . 
+\end{DoxyReturn}

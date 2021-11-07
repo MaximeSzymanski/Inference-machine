@@ -1,0 +1,570 @@
+\hypertarget{craft_8c}{}\doxysection{C\+:/\+Users/2maxi/\+Desktop/\+Exemple d\textquotesingle{}application/\+Documents sources/exemple\+\_\+dapplication/craft.c File Reference}
+\label{craft_8c}\index{C:/Users/2maxi/Desktop/Exemple d\textquotesingle{}application/Documents sources/exemple\_dapplication/craft.c@{C:/Users/2maxi/Desktop/Exemple d\textquotesingle{}application/Documents sources/exemple\_dapplication/craft.c}}
+
+
+Fichier source des fonctions relative au craft.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}craft.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}all.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_b_c}{liste\+\_\+regle}} \mbox{\hyperlink{craft_8c_a0d243d2067e7750d5b7e96a82147f125}{lire\+\_\+fichier\+\_\+regle}} (void)
+\begin{DoxyCompactList}\small\item\em Fonction qui rempli la base de connaissance en récuperant les valeurs des regles dans un fichier \char`\"{}.\+txt\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_base__fait}{liste\+\_\+fait}} \mbox{\hyperlink{craft_8c_a57ae52ff609d021e610a2b1016606e78}{ajouter\+\_\+ccl\+\_\+deduction}} (\mbox{\hyperlink{struct_regle}{Regle}} $\ast$R, \mbox{\hyperlink{struct_base__fait}{liste\+\_\+fait}} $\ast$deduction)
+\begin{DoxyCompactList}\small\item\em Ajoute la conclusion d\textquotesingle{}une regle dans la liste de fait \char`\"{}deduction\char`\"{}. Déduction est la liste composé seulement des deductions du moteur d\textquotesingle{}inference. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_base__fait}{liste\+\_\+fait}} \mbox{\hyperlink{craft_8c_a9d78f5841a0532dccc74380780b5ef69}{ajouter\+\_\+ccl\+\_\+fait}} (\mbox{\hyperlink{struct_regle}{Regle}} $\ast$R, \mbox{\hyperlink{struct_base__fait}{liste\+\_\+fait}} BF, bool $\ast$test)
+\begin{DoxyCompactList}\small\item\em Fonction qui ajoute la conclusion d\textquotesingle{}une regle a une base de fait si la conclusion est vraie. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_regle}{Regle}} $\ast$ \mbox{\hyperlink{craft_8c_ab2155d88212f0b879a28d2f3105a27f4}{tester\+\_\+ccl}} (\mbox{\hyperlink{struct_regle}{Regle}} $\ast$R)
+\begin{DoxyCompactList}\small\item\em Fonction qui met a V\+R\+AI la conclusion d\textquotesingle{}une regle si la prémisse est vrai, ou F\+A\+UX sinon. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_regle}{Regle}} $\ast$ \mbox{\hyperlink{craft_8c_a5c29c89356c008bbf844ff555017a712}{activer\+\_\+prop}} (\mbox{\hyperlink{struct_regle}{Regle}} $\ast$R, \mbox{\hyperlink{struct_proposition}{Proposition}} prop)
+\begin{DoxyCompactList}\small\item\em Fonction qui met la a vrai dans la prémisse de la regle la proposition entré dans la fonction. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_regle}{Regle}} $\ast$ \mbox{\hyperlink{craft_8c_a88fa080bfaf461743287636e69c880c9}{remise\+\_\+a\+\_\+zero\+\_\+regle}} (\mbox{\hyperlink{struct_regle}{Regle}} $\ast$R)
+\begin{DoxyCompactList}\small\item\em Fonction qui remet a F\+A\+UX la prémisse d\textquotesingle{}une regle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_b_c}{liste\+\_\+regle}} \mbox{\hyperlink{craft_8c_a5abcd77ae8674c544fe21ac1e40454fd}{Remise\+\_\+a\+\_\+zero\+\_\+base\+\_\+connaissance}} (\mbox{\hyperlink{struct_b_c}{liste\+\_\+regle}} \mbox{\hyperlink{struct_b_c}{BC}})
+\begin{DoxyCompactList}\small\item\em Fonction qui remet a F\+A\+UX toutes les prémisses et conclusions des regles de la base de connaissance. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{craft_8c_ae8ad6c9090dc590f1fe483c078575806}\label{craft_8c_ae8ad6c9090dc590f1fe483c078575806}} 
+\mbox{\hyperlink{struct_regle}{Regle}} $\ast$ {\bfseries inference\+\_\+regle} (\mbox{\hyperlink{struct_regle}{Regle}} $\ast$R, \mbox{\hyperlink{struct_base__fait}{liste\+\_\+fait}} base\+\_\+fait)
+\item 
+\mbox{\Hypertarget{craft_8c_a66cadc1442b996ffce1f2b7a357fa6da}\label{craft_8c_a66cadc1442b996ffce1f2b7a357fa6da}} 
+\mbox{\hyperlink{struct_base__fait}{liste\+\_\+fait}} {\bfseries moteur\+\_\+inference} (\mbox{\hyperlink{struct_b_c}{liste\+\_\+regle}} \mbox{\hyperlink{struct_b_c}{BC}}, \mbox{\hyperlink{struct_base__fait}{liste\+\_\+fait}} base\+\_\+fait, \mbox{\hyperlink{struct_base__fait}{liste\+\_\+fait}} $\ast$deduction, bool $\ast$repetition)
+\item 
+void \mbox{\hyperlink{craft_8c_afc7469b0604ea4cfdb736652464318f2}{afficher\+\_\+fait}} (\mbox{\hyperlink{struct_base__fait}{liste\+\_\+fait}} base\+\_\+fait)
+\begin{DoxyCompactList}\small\item\em Fonction qui affiche la base de fait. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_base__fait}{liste\+\_\+fait}} \mbox{\hyperlink{craft_8c_ac2063bc3f0ecb02c70e2c24992299d8b}{creer\+\_\+liste\+\_\+fait}} (void)
+\begin{DoxyCompactList}\small\item\em Fonction qui crée une liste de fait vide. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_base__fait}{liste\+\_\+fait}} \mbox{\hyperlink{craft_8c_a221c7187fe848cd141473fa5f87b75c0}{ajouter\+\_\+fait}} (char $\ast$nom\+\_\+fait, \mbox{\hyperlink{struct_base__fait}{liste\+\_\+fait}} base\+\_\+fait)
+\begin{DoxyCompactList}\small\item\em Fonction qui ajoute un fait a la base de fait. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_regle}{Regle}} $\ast$ \mbox{\hyperlink{craft_8c_a5a1c95d429b9bff9d3e9ffe9955b0278}{Suppression\+\_\+\+Proposition}} (\mbox{\hyperlink{struct_regle}{Regle}} $\ast$r, \mbox{\hyperlink{struct_proposition}{Proposition}} prop)
+\begin{DoxyCompactList}\small\item\em Fonction qui supprime une proposition de la prémisse d\textquotesingle{}une regle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{craft_8c_aeebaea026f70470a1117864712d0712e}{afficher\+\_\+bc}} (\mbox{\hyperlink{struct_b_c}{liste\+\_\+regle}} lr)
+\begin{DoxyCompactList}\small\item\em Fonction qui affiche la liste des regles de la base de connaissance donnée. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_regle}{Regle}} $\ast$ \mbox{\hyperlink{craft_8c_a065a7b39c8623261357e038ac0b3c837}{creer\+\_\+regle}} (char $\ast$nom\+\_\+R)
+\begin{DoxyCompactList}\small\item\em Fonction qui crée une regle vide. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{craft_8c_afb510b75c4ebd58bd051e88a5b726b5a}{regle\+\_\+deja\+\_\+existante}} (char $\ast$nom, \mbox{\hyperlink{struct_b_c}{liste\+\_\+regle}} B\+DC)
+\begin{DoxyCompactList}\small\item\em Fonction qui indique si une regle est dans une base de connaissance a partir du nom de cette regle. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{craft_8c_af69265ff00f0aa379087e6e5f248d66b}{proposition\+\_\+deja\+\_\+existante}} (char $\ast$nom, \mbox{\hyperlink{struct_regle}{Regle}} $\ast$R)
+\begin{DoxyCompactList}\small\item\em Fonction qui indique si une proposition est deja présente dans la prémisse d\textquotesingle{}une regle. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{craft_8c_adcebd926df38b6912c1b48a61b6c9469}{fait\+\_\+deja\+\_\+existant}} (char $\ast$nom, \mbox{\hyperlink{struct_base__fait}{liste\+\_\+fait}} base\+\_\+fait)
+\begin{DoxyCompactList}\small\item\em Fonction qui indique si un fait est deja présent dans une base de fait. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{craft_8c_a8fafe8c7d30921d03e749bcb08811792}{appartient\+\_\+premisse}} (\mbox{\hyperlink{structeleme}{Liste}} premisse, \mbox{\hyperlink{struct_proposition}{Proposition}} prop)
+\begin{DoxyCompactList}\small\item\em Fonction qui indique si proposition appartient a la premisse d\textquotesingle{}une regle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_regle}{Regle}} $\ast$ \mbox{\hyperlink{craft_8c_af1e7f53b185ca9ceb5ca940226094d37}{creer\+\_\+conclusion}} (char $\ast$nom\+\_\+ccl, \mbox{\hyperlink{struct_regle}{Regle}} $\ast$r)
+\begin{DoxyCompactList}\small\item\em Fonction qui crée la conclusion d\textquotesingle{}une regle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_regle}{Regle}} $\ast$ \mbox{\hyperlink{craft_8c_ae2cefa839efd51fec086c9170ac33a0d}{Ajout\+\_\+proposition\+\_\+premisse}} (\mbox{\hyperlink{struct_regle}{Regle}} $\ast$r, \mbox{\hyperlink{struct_proposition}{Proposition}} prop)
+\begin{DoxyCompactList}\small\item\em Fonction qui ajoute une proposition a la prémisse d\textquotesingle{}une regle. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{craft_8c_a078fc368e68e1e5e418c4441f510d749}{premisse\+\_\+est\+\_\+vide}} (\mbox{\hyperlink{structeleme}{Liste}} premisse)
+\begin{DoxyCompactList}\small\item\em Test si la prémisse d\textquotesingle{}une regle est vide. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_proposition}{Proposition}} \mbox{\hyperlink{craft_8c_ad8acbb06c68e44e3b5196cdefd6fa3f4}{tete\+\_\+premisse}} (\mbox{\hyperlink{structeleme}{Liste}} premisse)
+\begin{DoxyCompactList}\small\item\em Fonction qui retourne la tete de la prémisse. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_proposition}{Proposition}} \mbox{\hyperlink{craft_8c_abdf8b77fc4f8c3b54d5e36b557fcdbbb}{conclusion\+\_\+regle}} (\mbox{\hyperlink{struct_regle}{Regle}} $\ast$R)
+\begin{DoxyCompactList}\small\item\em Fonction qui renvoie la conclusion d\textquotesingle{}une regle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_regle}{Regle}} $\ast$ \mbox{\hyperlink{craft_8c_a1525d16b1c38b7635ed33f735a3fd862}{cherche\+\_\+regle}} (char $\ast$nom, \mbox{\hyperlink{struct_b_c}{liste\+\_\+regle}} \mbox{\hyperlink{struct_b_c}{BC}})
+\begin{DoxyCompactList}\small\item\em Fonction qui retourne la regle dont le nom est entrée, depuis la base de connaissance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_b_c}{liste\+\_\+regle}} \mbox{\hyperlink{craft_8c_a3f666d2658bb9c35be6e7e7cab913840}{creer\+\_\+base\+\_\+vide}} (void)
+\begin{DoxyCompactList}\small\item\em Fonction qui crée une liste de regle vide. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_regle}{Regle}} $\ast$ \mbox{\hyperlink{craft_8c_ad8545e7a7c339290992343f55ba96cb6}{tete\+\_\+bc}} (\mbox{\hyperlink{struct_b_c}{liste\+\_\+regle}} bc)
+\begin{DoxyCompactList}\small\item\em Fonction qui renvoie la tete de la base de connaissance. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{craft_8c_a165eb0643488011e4b031cdd2e12a92b}\label{craft_8c_a165eb0643488011e4b031cdd2e12a92b}} 
+\mbox{\hyperlink{struct_b_c}{liste\+\_\+regle}} {\bfseries ajout\+\_\+\+Regle} (\mbox{\hyperlink{struct_b_c}{liste\+\_\+regle}} $\ast$bc, \mbox{\hyperlink{struct_regle}{Regle}} $\ast$r)
+\item 
+void \mbox{\hyperlink{craft_8c_a7fb2f7a47e72c3b17eaa59f465b4ec86}{affiche\+\_\+liste}} (\mbox{\hyperlink{struct_regle}{Regle}} $\ast$R)
+\begin{DoxyCompactList}\small\item\em Fonction qui affiche le nom, la prémisse et la conclusion d\textquotesingle{}une regle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Fichier source des fonctions relative au craft. 
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+25/12/2020 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Maxime S\+Z\+Y\+M\+A\+N\+S\+KI Jules P\+E\+T\+RY
+\begin{DoxyEnumerate}
+\item Lecture des regles dans un fichier \+: Les regles sont lues dans un fichier afin de construire la base de connaissance. Les regles sont les items que le joueur peut craft avec les ressources necessaires.
+\item Moteur d\textquotesingle{}inference \+: ~\newline
+ Le moteur d\textquotesingle{}inference permet de donner les crafts possible en fonction de l\textquotesingle{}inventaire du joueur. 
+\end{DoxyEnumerate}
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{craft_8c_a5c29c89356c008bbf844ff555017a712}\label{craft_8c_a5c29c89356c008bbf844ff555017a712}} 
+\index{craft.c@{craft.c}!activer\_prop@{activer\_prop}}
+\index{activer\_prop@{activer\_prop}!craft.c@{craft.c}}
+\doxysubsubsection{\texorpdfstring{activer\_prop()}{activer\_prop()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_regle}{Regle}} $\ast$ activer\+\_\+prop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_regle}{Regle}} $\ast$}]{R,  }\item[{\mbox{\hyperlink{struct_proposition}{Proposition}}}]{prop }\end{DoxyParamCaption})}
+
+
+
+Fonction qui met la a vrai dans la prémisse de la regle la proposition entré dans la fonction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em R} & \mbox{\hyperlink{struct_regle}{Regle}} ou l\textquotesingle{}on va mettre a vrai la proposition entré en parametre. \\
+\hline
+{\em prop} & \mbox{\hyperlink{struct_proposition}{Proposition}} a mettre a vrai dans la prémisse. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_regle}{Regle}} Retourne un pointeur sur la \mbox{\hyperlink{struct_regle}{Regle}} que l\textquotesingle{}on a modifie. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{craft_8c_a7fb2f7a47e72c3b17eaa59f465b4ec86}\label{craft_8c_a7fb2f7a47e72c3b17eaa59f465b4ec86}} 
+\index{craft.c@{craft.c}!affiche\_liste@{affiche\_liste}}
+\index{affiche\_liste@{affiche\_liste}!craft.c@{craft.c}}
+\doxysubsubsection{\texorpdfstring{affiche\_liste()}{affiche\_liste()}}
+{\footnotesize\ttfamily void affiche\+\_\+liste (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_regle}{Regle}} $\ast$}]{R }\end{DoxyParamCaption})}
+
+
+
+Fonction qui affiche le nom, la prémisse et la conclusion d\textquotesingle{}une regle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em R} & \mbox{\hyperlink{struct_regle}{Regle}} a afficher. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{craft_8c_aeebaea026f70470a1117864712d0712e}\label{craft_8c_aeebaea026f70470a1117864712d0712e}} 
+\index{craft.c@{craft.c}!afficher\_bc@{afficher\_bc}}
+\index{afficher\_bc@{afficher\_bc}!craft.c@{craft.c}}
+\doxysubsubsection{\texorpdfstring{afficher\_bc()}{afficher\_bc()}}
+{\footnotesize\ttfamily void afficher\+\_\+bc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_b_c}{liste\+\_\+regle}}}]{lr }\end{DoxyParamCaption})}
+
+
+
+Fonction qui affiche la liste des regles de la base de connaissance donnée. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em liste\+\_\+regle} & Liste de regles a afficher. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{craft_8c_afc7469b0604ea4cfdb736652464318f2}\label{craft_8c_afc7469b0604ea4cfdb736652464318f2}} 
+\index{craft.c@{craft.c}!afficher\_fait@{afficher\_fait}}
+\index{afficher\_fait@{afficher\_fait}!craft.c@{craft.c}}
+\doxysubsubsection{\texorpdfstring{afficher\_fait()}{afficher\_fait()}}
+{\footnotesize\ttfamily void afficher\+\_\+fait (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_base__fait}{liste\+\_\+fait}}}]{base\+\_\+fait }\end{DoxyParamCaption})}
+
+
+
+Fonction qui affiche la base de fait. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+\_\+fait} & Base de fait a afficher. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{craft_8c_ae2cefa839efd51fec086c9170ac33a0d}\label{craft_8c_ae2cefa839efd51fec086c9170ac33a0d}} 
+\index{craft.c@{craft.c}!Ajout\_proposition\_premisse@{Ajout\_proposition\_premisse}}
+\index{Ajout\_proposition\_premisse@{Ajout\_proposition\_premisse}!craft.c@{craft.c}}
+\doxysubsubsection{\texorpdfstring{Ajout\_proposition\_premisse()}{Ajout\_proposition\_premisse()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_regle}{Regle}} $\ast$ Ajout\+\_\+proposition\+\_\+premisse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_regle}{Regle}} $\ast$}]{r,  }\item[{\mbox{\hyperlink{struct_proposition}{Proposition}}}]{prop }\end{DoxyParamCaption})}
+
+
+
+Fonction qui ajoute une proposition a la prémisse d\textquotesingle{}une regle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & \mbox{\hyperlink{struct_regle}{Regle}} ou l\textquotesingle{}on veut ajouter une proposition a la prémisse. \\
+\hline
+{\em prop} & \mbox{\hyperlink{struct_proposition}{Proposition}} a ajouter en premisse. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Regle$\ast$ Retourne un pointeur sur la regle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{craft_8c_a57ae52ff609d021e610a2b1016606e78}\label{craft_8c_a57ae52ff609d021e610a2b1016606e78}} 
+\index{craft.c@{craft.c}!ajouter\_ccl\_deduction@{ajouter\_ccl\_deduction}}
+\index{ajouter\_ccl\_deduction@{ajouter\_ccl\_deduction}!craft.c@{craft.c}}
+\doxysubsubsection{\texorpdfstring{ajouter\_ccl\_deduction()}{ajouter\_ccl\_deduction()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_base__fait}{liste\+\_\+fait}} ajouter\+\_\+ccl\+\_\+deduction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_regle}{Regle}} $\ast$}]{R,  }\item[{\mbox{\hyperlink{struct_base__fait}{liste\+\_\+fait}} $\ast$}]{deduction }\end{DoxyParamCaption})}
+
+
+
+Ajoute la conclusion d\textquotesingle{}une regle dans la liste de fait \char`\"{}deduction\char`\"{}. Déduction est la liste composé seulement des deductions du moteur d\textquotesingle{}inference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em R} & Pointeur sur la regle dont on veut la conclusion. \\
+\hline
+{\em deduction} & Pointeur sur la deduction a remplir. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+liste\+\_\+fait Retourne liste de fait deduis. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{craft_8c_a9d78f5841a0532dccc74380780b5ef69}\label{craft_8c_a9d78f5841a0532dccc74380780b5ef69}} 
+\index{craft.c@{craft.c}!ajouter\_ccl\_fait@{ajouter\_ccl\_fait}}
+\index{ajouter\_ccl\_fait@{ajouter\_ccl\_fait}!craft.c@{craft.c}}
+\doxysubsubsection{\texorpdfstring{ajouter\_ccl\_fait()}{ajouter\_ccl\_fait()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_base__fait}{liste\+\_\+fait}} ajouter\+\_\+ccl\+\_\+fait (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_regle}{Regle}} $\ast$}]{R,  }\item[{\mbox{\hyperlink{struct_base__fait}{liste\+\_\+fait}}}]{BF,  }\item[{bool $\ast$}]{test }\end{DoxyParamCaption})}
+
+
+
+Fonction qui ajoute la conclusion d\textquotesingle{}une regle a une base de fait si la conclusion est vraie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em R} & \mbox{\hyperlink{struct_regle}{Regle}} dont on veut la conclusion. \\
+\hline
+{\em BF} & Base de fait ou l\textquotesingle{}on veut ajouter la conclusion de la regle. \\
+\hline
+{\em test} & Booléen qui vaut vrai si la conclusion est vrai et faux sinon. Il sert a determiner si l\textquotesingle{}on a deduit un fait ou pas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+liste\+\_\+fait Retourne la base de fait avec la conclusion rajouté si elle est vrai. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{craft_8c_a221c7187fe848cd141473fa5f87b75c0}\label{craft_8c_a221c7187fe848cd141473fa5f87b75c0}} 
+\index{craft.c@{craft.c}!ajouter\_fait@{ajouter\_fait}}
+\index{ajouter\_fait@{ajouter\_fait}!craft.c@{craft.c}}
+\doxysubsubsection{\texorpdfstring{ajouter\_fait()}{ajouter\_fait()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_base__fait}{liste\+\_\+fait}} ajouter\+\_\+fait (\begin{DoxyParamCaption}\item[{char $\ast$}]{nom\+\_\+fait,  }\item[{\mbox{\hyperlink{struct_base__fait}{liste\+\_\+fait}}}]{base\+\_\+fait }\end{DoxyParamCaption})}
+
+
+
+Fonction qui ajoute un fait a la base de fait. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom\+\_\+fait} & Nom du fait a ajouter dans la base de fait. \\
+\hline
+{\em base\+\_\+fait} & Base de fait ou l\textquotesingle{}on veut ajouter le fait. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+liste\+\_\+fait Retourne la liste de fait avec la nouvelle proposition. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{craft_8c_a8fafe8c7d30921d03e749bcb08811792}\label{craft_8c_a8fafe8c7d30921d03e749bcb08811792}} 
+\index{craft.c@{craft.c}!appartient\_premisse@{appartient\_premisse}}
+\index{appartient\_premisse@{appartient\_premisse}!craft.c@{craft.c}}
+\doxysubsubsection{\texorpdfstring{appartient\_premisse()}{appartient\_premisse()}}
+{\footnotesize\ttfamily bool appartient\+\_\+premisse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structeleme}{Liste}}}]{premisse,  }\item[{\mbox{\hyperlink{struct_proposition}{Proposition}}}]{prop }\end{DoxyParamCaption})}
+
+
+
+Fonction qui indique si proposition appartient a la premisse d\textquotesingle{}une regle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em premisse} & Liste de proposition qui représente la premisse de la regle. \\
+\hline
+{\em prop} & \mbox{\hyperlink{struct_proposition}{Proposition}} a rechercher. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Retourne V\+R\+AI si la proposution est deja dans la prémisse, F\+A\+UX sinon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{craft_8c_a1525d16b1c38b7635ed33f735a3fd862}\label{craft_8c_a1525d16b1c38b7635ed33f735a3fd862}} 
+\index{craft.c@{craft.c}!cherche\_regle@{cherche\_regle}}
+\index{cherche\_regle@{cherche\_regle}!craft.c@{craft.c}}
+\doxysubsubsection{\texorpdfstring{cherche\_regle()}{cherche\_regle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_regle}{Regle}} $\ast$ cherche\+\_\+regle (\begin{DoxyParamCaption}\item[{char $\ast$}]{nom,  }\item[{\mbox{\hyperlink{struct_b_c}{liste\+\_\+regle}}}]{BC }\end{DoxyParamCaption})}
+
+
+
+Fonction qui retourne la regle dont le nom est entrée, depuis la base de connaissance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom} & Chaine de caractere qui représente le nom de la regle a renvoyer. \\
+\hline
+{\em \mbox{\hyperlink{struct_b_c}{BC}}} & Base de connaissance dans laquel l\textquotesingle{}on va chercher la regle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_regle}{Regle}} Retourne un pointeur sur la regle recherchée. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{craft_8c_abdf8b77fc4f8c3b54d5e36b557fcdbbb}\label{craft_8c_abdf8b77fc4f8c3b54d5e36b557fcdbbb}} 
+\index{craft.c@{craft.c}!conclusion\_regle@{conclusion\_regle}}
+\index{conclusion\_regle@{conclusion\_regle}!craft.c@{craft.c}}
+\doxysubsubsection{\texorpdfstring{conclusion\_regle()}{conclusion\_regle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_proposition}{Proposition}} conclusion\+\_\+regle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_regle}{Regle}} $\ast$}]{R }\end{DoxyParamCaption})}
+
+
+
+Fonction qui renvoie la conclusion d\textquotesingle{}une regle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em R} & Pointeur sur la regle dont on veut la conclusion. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_proposition}{Proposition}} Retourne la conclusion de la regle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{craft_8c_a3f666d2658bb9c35be6e7e7cab913840}\label{craft_8c_a3f666d2658bb9c35be6e7e7cab913840}} 
+\index{craft.c@{craft.c}!creer\_base\_vide@{creer\_base\_vide}}
+\index{creer\_base\_vide@{creer\_base\_vide}!craft.c@{craft.c}}
+\doxysubsubsection{\texorpdfstring{creer\_base\_vide()}{creer\_base\_vide()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_b_c}{liste\+\_\+regle}} creer\+\_\+base\+\_\+vide (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui crée une liste de regle vide. 
+
+\begin{DoxyReturn}{Returns}
+liste\+\_\+regle Retourne la liste de regle vide. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{craft_8c_af1e7f53b185ca9ceb5ca940226094d37}\label{craft_8c_af1e7f53b185ca9ceb5ca940226094d37}} 
+\index{craft.c@{craft.c}!creer\_conclusion@{creer\_conclusion}}
+\index{creer\_conclusion@{creer\_conclusion}!craft.c@{craft.c}}
+\doxysubsubsection{\texorpdfstring{creer\_conclusion()}{creer\_conclusion()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_regle}{Regle}} $\ast$ creer\+\_\+conclusion (\begin{DoxyParamCaption}\item[{char $\ast$}]{nom\+\_\+ccl,  }\item[{\mbox{\hyperlink{struct_regle}{Regle}} $\ast$}]{r }\end{DoxyParamCaption})}
+
+
+
+Fonction qui crée la conclusion d\textquotesingle{}une regle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & \mbox{\hyperlink{struct_regle}{Regle}} ou l\textquotesingle{}on veut ajouter la conclusion. \\
+\hline
+{\em nom\+\_\+ccl} & Nom de la conclision. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Regle$\ast$ Retourne un pointeur sur la regle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{craft_8c_ac2063bc3f0ecb02c70e2c24992299d8b}\label{craft_8c_ac2063bc3f0ecb02c70e2c24992299d8b}} 
+\index{craft.c@{craft.c}!creer\_liste\_fait@{creer\_liste\_fait}}
+\index{creer\_liste\_fait@{creer\_liste\_fait}!craft.c@{craft.c}}
+\doxysubsubsection{\texorpdfstring{creer\_liste\_fait()}{creer\_liste\_fait()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_base__fait}{liste\+\_\+fait}} creer\+\_\+liste\+\_\+fait (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui crée une liste de fait vide. 
+
+\begin{DoxyReturn}{Returns}
+liste\+\_\+fait Retourne une liste de fait vide. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{craft_8c_a065a7b39c8623261357e038ac0b3c837}\label{craft_8c_a065a7b39c8623261357e038ac0b3c837}} 
+\index{craft.c@{craft.c}!creer\_regle@{creer\_regle}}
+\index{creer\_regle@{creer\_regle}!craft.c@{craft.c}}
+\doxysubsubsection{\texorpdfstring{creer\_regle()}{creer\_regle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_regle}{Regle}} $\ast$ creer\+\_\+regle (\begin{DoxyParamCaption}\item[{char $\ast$}]{nom\+\_\+R }\end{DoxyParamCaption})}
+
+
+
+Fonction qui crée une regle vide. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom\+\_\+R} & Nom de la regle a creer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Regle$\ast$ Retourne un pointeur sur la regle créee. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{craft_8c_adcebd926df38b6912c1b48a61b6c9469}\label{craft_8c_adcebd926df38b6912c1b48a61b6c9469}} 
+\index{craft.c@{craft.c}!fait\_deja\_existant@{fait\_deja\_existant}}
+\index{fait\_deja\_existant@{fait\_deja\_existant}!craft.c@{craft.c}}
+\doxysubsubsection{\texorpdfstring{fait\_deja\_existant()}{fait\_deja\_existant()}}
+{\footnotesize\ttfamily bool fait\+\_\+deja\+\_\+existant (\begin{DoxyParamCaption}\item[{char $\ast$}]{nom,  }\item[{\mbox{\hyperlink{struct_base__fait}{liste\+\_\+fait}}}]{base\+\_\+fait }\end{DoxyParamCaption})}
+
+
+
+Fonction qui indique si un fait est deja présent dans une base de fait. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom} & Chaine de caractere qui représente le nom du fait. \\
+\hline
+{\em base\+\_\+fait} & Base de fait ou l\textquotesingle{}on cherche le fait. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Retourne V\+R\+AI si le fait est deja dans la base de fait, F\+A\+UX sinon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{craft_8c_a0d243d2067e7750d5b7e96a82147f125}\label{craft_8c_a0d243d2067e7750d5b7e96a82147f125}} 
+\index{craft.c@{craft.c}!lire\_fichier\_regle@{lire\_fichier\_regle}}
+\index{lire\_fichier\_regle@{lire\_fichier\_regle}!craft.c@{craft.c}}
+\doxysubsubsection{\texorpdfstring{lire\_fichier\_regle()}{lire\_fichier\_regle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_b_c}{liste\+\_\+regle}} lire\+\_\+fichier\+\_\+regle (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Fonction qui rempli la base de connaissance en récuperant les valeurs des regles dans un fichier \char`\"{}.\+txt\char`\"{}. 
+
+\begin{DoxyReturn}{Returns}
+liste\+\_\+regle Retourne la base de connaissance remplie. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{craft_8c_a078fc368e68e1e5e418c4441f510d749}\label{craft_8c_a078fc368e68e1e5e418c4441f510d749}} 
+\index{craft.c@{craft.c}!premisse\_est\_vide@{premisse\_est\_vide}}
+\index{premisse\_est\_vide@{premisse\_est\_vide}!craft.c@{craft.c}}
+\doxysubsubsection{\texorpdfstring{premisse\_est\_vide()}{premisse\_est\_vide()}}
+{\footnotesize\ttfamily bool premisse\+\_\+est\+\_\+vide (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structeleme}{Liste}}}]{premisse }\end{DoxyParamCaption})}
+
+
+
+Test si la prémisse d\textquotesingle{}une regle est vide. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em premisse} & Premisse de la regle. C\textquotesingle{}est une liste chainée de proposition. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Retourne V\+R\+AI si la prémisse est vide et F\+A\+UX sinon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{craft_8c_af69265ff00f0aa379087e6e5f248d66b}\label{craft_8c_af69265ff00f0aa379087e6e5f248d66b}} 
+\index{craft.c@{craft.c}!proposition\_deja\_existante@{proposition\_deja\_existante}}
+\index{proposition\_deja\_existante@{proposition\_deja\_existante}!craft.c@{craft.c}}
+\doxysubsubsection{\texorpdfstring{proposition\_deja\_existante()}{proposition\_deja\_existante()}}
+{\footnotesize\ttfamily bool proposition\+\_\+deja\+\_\+existante (\begin{DoxyParamCaption}\item[{char $\ast$}]{nom,  }\item[{\mbox{\hyperlink{struct_regle}{Regle}} $\ast$}]{R }\end{DoxyParamCaption})}
+
+
+
+Fonction qui indique si une proposition est deja présente dans la prémisse d\textquotesingle{}une regle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom} & Chaine de caractere qui représente le nom de la proposition. \\
+\hline
+{\em R} & \mbox{\hyperlink{struct_regle}{Regle}} ou l\textquotesingle{}on va chercher la presence de la proposition. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Retourne V\+R\+AI si une proposition a ce nom dans la prémisse, faux sinon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{craft_8c_afb510b75c4ebd58bd051e88a5b726b5a}\label{craft_8c_afb510b75c4ebd58bd051e88a5b726b5a}} 
+\index{craft.c@{craft.c}!regle\_deja\_existante@{regle\_deja\_existante}}
+\index{regle\_deja\_existante@{regle\_deja\_existante}!craft.c@{craft.c}}
+\doxysubsubsection{\texorpdfstring{regle\_deja\_existante()}{regle\_deja\_existante()}}
+{\footnotesize\ttfamily bool regle\+\_\+deja\+\_\+existante (\begin{DoxyParamCaption}\item[{char $\ast$}]{nom,  }\item[{\mbox{\hyperlink{struct_b_c}{liste\+\_\+regle}}}]{BC }\end{DoxyParamCaption})}
+
+
+
+Fonction qui indique si une regle est dans une base de connaissance a partir du nom de cette regle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom} & Chaine de caractere qui représente le nom de la regle a rechercher. \\
+\hline
+{\em \mbox{\hyperlink{struct_b_c}{BC}}} & Base de connaissance dans laquel on va rechercher la regle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Retourne V\+R\+AI si la regle est deja dans la base de connaissance, F\+A\+UX sinon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{craft_8c_a5abcd77ae8674c544fe21ac1e40454fd}\label{craft_8c_a5abcd77ae8674c544fe21ac1e40454fd}} 
+\index{craft.c@{craft.c}!Remise\_a\_zero\_base\_connaissance@{Remise\_a\_zero\_base\_connaissance}}
+\index{Remise\_a\_zero\_base\_connaissance@{Remise\_a\_zero\_base\_connaissance}!craft.c@{craft.c}}
+\doxysubsubsection{\texorpdfstring{Remise\_a\_zero\_base\_connaissance()}{Remise\_a\_zero\_base\_connaissance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_b_c}{liste\+\_\+regle}} Remise\+\_\+a\+\_\+zero\+\_\+base\+\_\+connaissance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_b_c}{liste\+\_\+regle}}}]{BC }\end{DoxyParamCaption})}
+
+
+
+Fonction qui remet a F\+A\+UX toutes les prémisses et conclusions des regles de la base de connaissance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{struct_b_c}{BC}}} & Base de connaissance a remette a zero. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+liste\+\_\+regle Retourne la base de connaissance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{craft_8c_a88fa080bfaf461743287636e69c880c9}\label{craft_8c_a88fa080bfaf461743287636e69c880c9}} 
+\index{craft.c@{craft.c}!remise\_a\_zero\_regle@{remise\_a\_zero\_regle}}
+\index{remise\_a\_zero\_regle@{remise\_a\_zero\_regle}!craft.c@{craft.c}}
+\doxysubsubsection{\texorpdfstring{remise\_a\_zero\_regle()}{remise\_a\_zero\_regle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_regle}{Regle}} $\ast$ remise\+\_\+a\+\_\+zero\+\_\+regle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_regle}{Regle}} $\ast$}]{R }\end{DoxyParamCaption})}
+
+
+
+Fonction qui remet a F\+A\+UX la prémisse d\textquotesingle{}une regle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em R} & Pointeur sur la regle a modifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_regle}{Regle}} Retourne la regle modififé. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{craft_8c_a5a1c95d429b9bff9d3e9ffe9955b0278}\label{craft_8c_a5a1c95d429b9bff9d3e9ffe9955b0278}} 
+\index{craft.c@{craft.c}!Suppression\_Proposition@{Suppression\_Proposition}}
+\index{Suppression\_Proposition@{Suppression\_Proposition}!craft.c@{craft.c}}
+\doxysubsubsection{\texorpdfstring{Suppression\_Proposition()}{Suppression\_Proposition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_regle}{Regle}} $\ast$ Suppression\+\_\+\+Proposition (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_regle}{Regle}} $\ast$}]{r,  }\item[{\mbox{\hyperlink{struct_proposition}{Proposition}}}]{prop }\end{DoxyParamCaption})}
+
+
+
+Fonction qui supprime une proposition de la prémisse d\textquotesingle{}une regle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Pointeur sur la regle a modifier. \\
+\hline
+{\em prop} & \mbox{\hyperlink{struct_proposition}{Proposition}} a supprimer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_regle}{Regle}} Retourne la regle modififé. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{craft_8c_ab2155d88212f0b879a28d2f3105a27f4}\label{craft_8c_ab2155d88212f0b879a28d2f3105a27f4}} 
+\index{craft.c@{craft.c}!tester\_ccl@{tester\_ccl}}
+\index{tester\_ccl@{tester\_ccl}!craft.c@{craft.c}}
+\doxysubsubsection{\texorpdfstring{tester\_ccl()}{tester\_ccl()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_regle}{Regle}} $\ast$ tester\+\_\+ccl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_regle}{Regle}} $\ast$}]{R }\end{DoxyParamCaption})}
+
+
+
+Fonction qui met a V\+R\+AI la conclusion d\textquotesingle{}une regle si la prémisse est vrai, ou F\+A\+UX sinon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em R} & Pointeur sur la regle a modifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_regle}{Regle}} Retourne la regle modififé. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{craft_8c_ad8545e7a7c339290992343f55ba96cb6}\label{craft_8c_ad8545e7a7c339290992343f55ba96cb6}} 
+\index{craft.c@{craft.c}!tete\_bc@{tete\_bc}}
+\index{tete\_bc@{tete\_bc}!craft.c@{craft.c}}
+\doxysubsubsection{\texorpdfstring{tete\_bc()}{tete\_bc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_regle}{Regle}} $\ast$ tete\+\_\+bc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_b_c}{liste\+\_\+regle}}}]{bc }\end{DoxyParamCaption})}
+
+
+
+Fonction qui renvoie la tete de la base de connaissance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bc} & Base de connaissance dont on veut la tete. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_regle}{Regle}} Retourne la regle en tete de liste de la base de connaissance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{craft_8c_ad8acbb06c68e44e3b5196cdefd6fa3f4}\label{craft_8c_ad8acbb06c68e44e3b5196cdefd6fa3f4}} 
+\index{craft.c@{craft.c}!tete\_premisse@{tete\_premisse}}
+\index{tete\_premisse@{tete\_premisse}!craft.c@{craft.c}}
+\doxysubsubsection{\texorpdfstring{tete\_premisse()}{tete\_premisse()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_proposition}{Proposition}} tete\+\_\+premisse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structeleme}{Liste}}}]{premisse }\end{DoxyParamCaption})}
+
+
+
+Fonction qui retourne la tete de la prémisse. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em premisse} & Premisse dont on veut la récuperer la valeur de la tete. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_proposition}{Proposition}} Retourne la proposition en tete de prémisse, donc de liste. 
+\end{DoxyReturn}

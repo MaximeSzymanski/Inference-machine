@@ -1,0 +1,185 @@
+\hypertarget{fonctions_8c}{}\doxysection{C\+:/\+Users/2maxi/\+Desktop/\+Exemple d\textquotesingle{}application/\+Documents sources/exemple\+\_\+dapplication/fonctions.c File Reference}
+\label{fonctions_8c}\index{C:/Users/2maxi/Desktop/Exemple d\textquotesingle{}application/Documents sources/exemple\_dapplication/fonctions.c@{C:/Users/2maxi/Desktop/Exemple d\textquotesingle{}application/Documents sources/exemple\_dapplication/fonctions.c}}
+
+
+Fichier source des fonctions relative a l\textquotesingle{}arbre et donc la map du jeu.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}all.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtree__elem}{B\+Tree}} \mbox{\hyperlink{fonctions_8c_a97aa41059778fdc1c152621297968c01}{creer\+\_\+arbre}} (int nom)
+\begin{DoxyCompactList}\small\item\em Fonction qui creer et initialise un element d\textquotesingle{}arbre. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fonctions_8c_a6e597e96a2963f7a5e081eb8c881207e}{detruire\+\_\+arbre}} (\mbox{\hyperlink{structtree__elem}{B\+Tree}} t)
+\begin{DoxyCompactList}\small\item\em Fonction qui libere la memoire allouer a la constitution d\textquotesingle{}un arbre. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtree__elem}{B\+Tree}} \mbox{\hyperlink{fonctions_8c_adc1976a697d93746f35b2dcd641edd7c}{enraciner}} (\mbox{\hyperlink{structtree__elem}{B\+Tree}} l, \mbox{\hyperlink{structtree__elem}{B\+Tree}} r, \mbox{\hyperlink{structtree__elem}{B\+Tree}} t)
+\begin{DoxyCompactList}\small\item\em Fonction qui enracine deux feuilles a un noeud. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fonctions_8c_a88e2d0cb892bf5c7bc1815711a527793}{afficher\+\_\+arbre\+\_\+prefix}} (\mbox{\hyperlink{structtree__elem}{B\+Tree}} t)
+\begin{DoxyCompactList}\small\item\em Fonction qui affiche l\textquotesingle{}arbre de gauche a droite. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{fonctions_8c_a5b8451422e3cb83fef57c5c61b3f12df}{nombre\+\_\+noeuds}} (\mbox{\hyperlink{structtree__elem}{B\+Tree}} t)
+\begin{DoxyCompactList}\small\item\em Fonction qui affiche le nombre de noeud de l\textquotesingle{}arbre (feuilles et racine comprises) (fonction recursive). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtree__elem}{B\+Tree}} \mbox{\hyperlink{fonctions_8c_a00ce26b375776a38c627b722fd96f016}{extansion}} (\mbox{\hyperlink{struct_joueur}{Joueur}} j, \mbox{\hyperlink{structtree__elem}{B\+Tree}} t)
+\begin{DoxyCompactList}\small\item\em Fonction qui creer et ajoute une feuille droite et gauche a l\textquotesingle{}element ou le joueur est aller. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtree__elem}{B\+Tree}} \mbox{\hyperlink{fonctions_8c_a901bcb6c7932764c5863c0fbf7d2700f}{parcourir\+\_\+arbre}} (\mbox{\hyperlink{struct_joueur}{Joueur}} j, \mbox{\hyperlink{structtree__elem}{B\+Tree}} t)
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de parcourir l\textquotesingle{}arbre (la map) jusqu\textquotesingle{}au lieu ou se situe le joueur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Fichier source des fonctions relative a l\textquotesingle{}arbre et donc la map du jeu. 
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+25/12/2020 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Maxime S\+Z\+Y\+M\+A\+N\+S\+KI Jules P\+E\+T\+RY
+\begin{DoxyEnumerate}
+\item Creation de l\textquotesingle{}arbre \+: En premier lieu, un arbre est cree avec une racine et deux feuilles au tout debut du jeu.
+\item Gestion de l\textquotesingle{}arbre \+: \textbackslash{}n\+Des feuilles peuvent etre ajoute en fonction de l\textquotesingle{}evolution du joueur // l\textquotesingle{}arbre est detruit a la fin du jeu. 
+\end{DoxyEnumerate}
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{fonctions_8c_a88e2d0cb892bf5c7bc1815711a527793}\label{fonctions_8c_a88e2d0cb892bf5c7bc1815711a527793}} 
+\index{fonctions.c@{fonctions.c}!afficher\_arbre\_prefix@{afficher\_arbre\_prefix}}
+\index{afficher\_arbre\_prefix@{afficher\_arbre\_prefix}!fonctions.c@{fonctions.c}}
+\doxysubsubsection{\texorpdfstring{afficher\_arbre\_prefix()}{afficher\_arbre\_prefix()}}
+{\footnotesize\ttfamily void afficher\+\_\+arbre\+\_\+prefix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtree__elem}{B\+Tree}}}]{t }\end{DoxyParamCaption})}
+
+
+
+Fonction qui affiche l\textquotesingle{}arbre de gauche a droite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & L\textquotesingle{}arbre a afficher. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctions_8c_a97aa41059778fdc1c152621297968c01}\label{fonctions_8c_a97aa41059778fdc1c152621297968c01}} 
+\index{fonctions.c@{fonctions.c}!creer\_arbre@{creer\_arbre}}
+\index{creer\_arbre@{creer\_arbre}!fonctions.c@{fonctions.c}}
+\doxysubsubsection{\texorpdfstring{creer\_arbre()}{creer\_arbre()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtree__elem}{B\+Tree}} creer\+\_\+arbre (\begin{DoxyParamCaption}\item[{int}]{nom }\end{DoxyParamCaption})}
+
+
+
+Fonction qui creer et initialise un element d\textquotesingle{}arbre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nom} & Nom du lieu que sera l\textquotesingle{}element de l\textquotesingle{}arbre. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+t Element d\textquotesingle{}arbre qui vient d\textquotesingle{}etre creer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctions_8c_a6e597e96a2963f7a5e081eb8c881207e}\label{fonctions_8c_a6e597e96a2963f7a5e081eb8c881207e}} 
+\index{fonctions.c@{fonctions.c}!detruire\_arbre@{detruire\_arbre}}
+\index{detruire\_arbre@{detruire\_arbre}!fonctions.c@{fonctions.c}}
+\doxysubsubsection{\texorpdfstring{detruire\_arbre()}{detruire\_arbre()}}
+{\footnotesize\ttfamily void detruire\+\_\+arbre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtree__elem}{B\+Tree}}}]{t }\end{DoxyParamCaption})}
+
+
+
+Fonction qui libere la memoire allouer a la constitution d\textquotesingle{}un arbre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & L\textquotesingle{}arbre a detruire. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctions_8c_adc1976a697d93746f35b2dcd641edd7c}\label{fonctions_8c_adc1976a697d93746f35b2dcd641edd7c}} 
+\index{fonctions.c@{fonctions.c}!enraciner@{enraciner}}
+\index{enraciner@{enraciner}!fonctions.c@{fonctions.c}}
+\doxysubsubsection{\texorpdfstring{enraciner()}{enraciner()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtree__elem}{B\+Tree}} enraciner (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtree__elem}{B\+Tree}}}]{l,  }\item[{\mbox{\hyperlink{structtree__elem}{B\+Tree}}}]{r,  }\item[{\mbox{\hyperlink{structtree__elem}{B\+Tree}}}]{t }\end{DoxyParamCaption})}
+
+
+
+Fonction qui enracine deux feuilles a un noeud. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & L\textquotesingle{}element d\textquotesingle{}arbre a enraciner en temps que fils gauche. \\
+\hline
+{\em r} & L\textquotesingle{}element d\textquotesingle{}arbre a enraciner en temps que fils droit. \\
+\hline
+{\em t} & L\textquotesingle{}element d\textquotesingle{}arbre sur lequel les feuilles vont s\textquotesingle{}enraciner. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+t L\textquotesingle{}arbre avec la racine et les deux fils. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctions_8c_a00ce26b375776a38c627b722fd96f016}\label{fonctions_8c_a00ce26b375776a38c627b722fd96f016}} 
+\index{fonctions.c@{fonctions.c}!extansion@{extansion}}
+\index{extansion@{extansion}!fonctions.c@{fonctions.c}}
+\doxysubsubsection{\texorpdfstring{extansion()}{extansion()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtree__elem}{B\+Tree}} extansion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_joueur}{Joueur}}}]{j,  }\item[{\mbox{\hyperlink{structtree__elem}{B\+Tree}}}]{t }\end{DoxyParamCaption})}
+
+
+
+Fonction qui creer et ajoute une feuille droite et gauche a l\textquotesingle{}element ou le joueur est aller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & Structure du \mbox{\hyperlink{struct_joueur}{Joueur}}. \\
+\hline
+{\em t} & L\textquotesingle{}arbre qu\textquotesingle{}on veut etendre. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+t L\textquotesingle{}arbre potentiellement etendu. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctions_8c_a5b8451422e3cb83fef57c5c61b3f12df}\label{fonctions_8c_a5b8451422e3cb83fef57c5c61b3f12df}} 
+\index{fonctions.c@{fonctions.c}!nombre\_noeuds@{nombre\_noeuds}}
+\index{nombre\_noeuds@{nombre\_noeuds}!fonctions.c@{fonctions.c}}
+\doxysubsubsection{\texorpdfstring{nombre\_noeuds()}{nombre\_noeuds()}}
+{\footnotesize\ttfamily int nombre\+\_\+noeuds (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtree__elem}{B\+Tree}}}]{t }\end{DoxyParamCaption})}
+
+
+
+Fonction qui affiche le nombre de noeud de l\textquotesingle{}arbre (feuilles et racine comprises) (fonction recursive). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & L\textquotesingle{}arbre dont on veut compter le nombre de noeuds. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Integer qui correspond a la somme des noeuds des fils gauche et des fils droits d\textquotesingle{}une racine. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctions_8c_a901bcb6c7932764c5863c0fbf7d2700f}\label{fonctions_8c_a901bcb6c7932764c5863c0fbf7d2700f}} 
+\index{fonctions.c@{fonctions.c}!parcourir\_arbre@{parcourir\_arbre}}
+\index{parcourir\_arbre@{parcourir\_arbre}!fonctions.c@{fonctions.c}}
+\doxysubsubsection{\texorpdfstring{parcourir\_arbre()}{parcourir\_arbre()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtree__elem}{B\+Tree}} parcourir\+\_\+arbre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_joueur}{Joueur}}}]{j,  }\item[{\mbox{\hyperlink{structtree__elem}{B\+Tree}}}]{t }\end{DoxyParamCaption})}
+
+
+
+Fonction qui permet de parcourir l\textquotesingle{}arbre (la map) jusqu\textquotesingle{}au lieu ou se situe le joueur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & Structure du \mbox{\hyperlink{struct_joueur}{Joueur}}. \\
+\hline
+{\em t} & Arbre qui correspond a la map. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+t Element de l\textquotesingle{}arbre ou le joueur se situe 
+\end{DoxyReturn}
